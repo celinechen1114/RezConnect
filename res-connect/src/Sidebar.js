@@ -11,6 +11,7 @@ const Sidebar = ({ onPostSelect }) => {
   const [posts, setPosts] = useState([]);
   const [title, setTitle] = useState("");
   const [body, setBody] = useState("");
+  const [comments, setComments] = useState([]);
 
   const handleChangeTitle = (event) => {
     setTitle(event.target.value);
