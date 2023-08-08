@@ -1,0 +1,46 @@
+.panel-container {
+    flex: 1; 
+    margin-left: 310px; /* original 290px + 20px gap */
+    width: calc(100% - 310px - 70px); /* adjusted width to account for the added gap */
+    padding: 10px;
+    height: calc(100vh - 40px);
+    overflow: auto;
+    background-color: #f9f9f9;
+    border-radius: 30px;
+    opacity: 0.8;
+    position: fixed;
+    right: 30px;
+    top: 10px;
+}
+
+.post-item {
+    background-color: white;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1), 0 6px 20px 0 rgba(0, 0, 0, 0.05);
+    margin-bottom: 15px;
+}
+
+.post-title {
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.post-body {
+    color: #555;
+    margin-bottom: 15px;
+}
+
+.comments-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+.comment-item {
+    padding: 8px 12px;
+    background-color: #f8f8f8;
+    border-radius: 8px;
+    margin-top: 5px;
+    color: #555;
+}
