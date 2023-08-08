@@ -1,12 +1,20 @@
-import logo from "./background.svg";
-import "./App.css";
+import React from 'react';
+import './App.css';
+import Login from './Login';
+import RAFeed from './RAFeed';
+import StudentFeed from './StudentFeed';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="bg-cover" alt="logo" />
-      </header>
+      <Router>
+        <Routes>
+          <Route path="/" element={<Login />} />
+          <Route path="/raFeed" element={<RAFeed />} />
+          <Route path="/studentFeed" element={<StudentFeed />} />
+        </Routes>
+      </Router>
     </div>
   );
 }
