@@ -38,8 +38,8 @@ function Profile({
   return (
     <div
       style={{
-        width: "90%",
-        padding: 20,
+        width: "100%",
+        padding: 10,
         background: "white",
         boxShadow: "14px 17px 40px 4px rgba(112, 144, 176, 0.08)",
         borderRadius: 20,
