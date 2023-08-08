@@ -41,14 +41,18 @@ function ProfileInfo({
           gap: 10,
         }}
       >
-        <h2 style={{ color: "#000" }}>Basic Details</h2>
-        <p style={{ color: "#000" }}>Name: {name}</p>
-        <p style={{ color: "#000" }}>Major: {major}</p>
-        <p style={{ color: "#000" }}>Year: {year}</p>
-        <p style={{ color: "#000" }}>Interests: {interests.join(", ")}</p>
-        <p style={{ color: "#000" }}>Clubs: {clubs.join(", ")}</p>
-        <p style={{ color: "#000" }}>Pronouns: {pronouns}</p>
-        <p style={{ color: "#000" }}>Contact: {contact}</p>
+        <h2 style={{ color: "#000", textAlign: "left" }}>Basic Details</h2>
+        <p style={{ color: "#000", textAlign: "left" }}>Name: {name}</p>
+        <p style={{ color: "#000", textAlign: "left" }}>Major: {major}</p>
+        <p style={{ color: "#000", textAlign: "left" }}>Year: {year}</p>
+        <p style={{ color: "#000", textAlign: "left" }}>
+          Interests: {interests.join(", ")}
+        </p>
+        <p style={{ color: "#000", textAlign: "left" }}>
+          Clubs: {clubs.join(", ")}
+        </p>
+        <p style={{ color: "#000", textAlign: "left" }}>Pronouns: {pronouns}</p>
+        <p style={{ color: "#000", textAlign: "left" }}>Contact: {contact}</p>
       </div>
       <div
         style={{
