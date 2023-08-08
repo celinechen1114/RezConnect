@@ -1,72 +1,49 @@
-// Sidebar.js
 import React, { useState } from "react";
 import "./css/Sidebar.css";
 import { useNavigate } from "react-router-dom";
 import Profile from "./profile/Profile";
 import profilePic from "./james.png";
 
-const Sidebar = ({ onPostSelect }) => {
-  let navigate = useNavigate();
+const Sidebar = ({ onPostSelect, posts }) => {
+    const [activeTag, setActiveTag] = useState('all'); // Track the currently selected tag
+    const tags = ["all", "sports", "social", "academics", "dorms", "emotional support", "health", "emergency"];
+    
+    const handlePostClick = (post) => {
+        onPostSelect(post);
+        setActiveTag('all'); // reset the filter after post selection
+    }
 
-  const [newPost, setNewPost] = useState(null);
-  const [posts, setPosts] = useState([]);
-  const [title, setTitle] = useState("");
-  const [body, setBody] = useState("");
-  const [comments, setComments] = useState([]);
+    const filteredPosts = activeTag === 'all' ? posts : posts.filter(post => post.tags && post.tags.includes(activeTag));
 
-  const handleChangeTitle = (event) => {
-    setTitle(event.target.value);
-  };
+    return (
+        <div className="sidebar">
+            <div className="title">RezConnect</div>
+            <div className="new-post-button">
+                <button onClick={() => onPostSelect(null)}>New Post</button>
+            </div>
 
-  const handleChangeBody = (event) => {
-    setBody(event.target.value);
-  };
+            <div className="tag-filter">
+                <h3>Filter by tags</h3>
+                <ul className="tags-list">
+                    {tags.map(tag => (
+                        <li 
+                            key={tag} 
+                            className={activeTag === tag ? "active-tag" : ""} 
+                            onClick={() => setActiveTag(tag)}>
+                            {tag}
+                        </li>
+                    ))}
+                </ul>
+            </div>
 
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    const post = { title, body };
-    setPosts([post, ...posts]);
-    setTitle("");
-    setBody("");
-  };
-
-  // const handleProfileClick = () => {
-  //   navigate("/profile"); // replace '/other-page' with the path you want to navigate to
-  // };
-
-  return (
-    <div className="sidebar">
-      <div className="title">RezConnect</div>
-      <div className="new-post-button">
-        <button onClick={() => setNewPost(true)}>New Post</button>
-        {newPost && (
-          <form onSubmit={handleSubmit}>
-            <input
-              type="text"
-              value={title}
-              onChange={handleChangeTitle}
-              placeholder="Post Title"
-              required
-            />
-            <textarea
-              value={body}
-              onChange={handleChangeBody}
-              placeholder="Post Content"
-              required
-            />
-            <button type="submit">Submit</button>
-          </form>
-        )}
-      </div>
-      <h2>Posts</h2>
-      <ul>
-        {posts.map((post, index) => (
-          <li key={index} onClick={() => onPostSelect(post)}>
-            <h3>{post.title}</h3>
-            <p>{post.body}</p>
-          </li>
-        ))}
-      </ul>
+            <h2>Posts</h2>
+            <ul className="posts">
+                {filteredPosts.map((post, index) => (
+                    <li className="post-item" key={index} onClick={() => handlePostClick(post)}>
+                        <h3>{post.title}</h3>
+                    </li>
+                ))}
+            </ul>
 
       <div className="profile-button">
         <Profile
