@@ -1,7 +1,14 @@
 import ProfileInfo from "./ProfileInfo";
 import { useState } from "react";
 
-function Profile({ name, grade, profilePic, location, profileInfoProps }) {
+function Profile({
+  name,
+  grade,
+  profilePic,
+  location,
+  text,
+  profileInfoProps,
+}) {
   // state to control visibility
   const [showProfileInfo, setShowProfileInfo] = useState(false);
 
@@ -16,7 +23,6 @@ function Profile({ name, grade, profilePic, location, profileInfoProps }) {
     <div
       style={{
         width: "90%",
-        height: 40,
         padding: 20,
         background: "white",
         boxShadow: "14px 17px 40px 4px rgba(112, 144, 176, 0.08)",
@@ -28,6 +34,7 @@ function Profile({ name, grade, profilePic, location, profileInfoProps }) {
         alignItems: "center",
         gap: 16,
         position: "relative", // make it relative to position the ProfileInfo correctly
+        listStyleType: "none",
       }}
       onClick={handleOutsideClick}
     >
@@ -44,20 +51,34 @@ function Profile({ name, grade, profilePic, location, profileInfoProps }) {
           {grade}
         </div>
       </div>
+      {location && (
+        <div
+          style={{
+            padding: 10,
+            background: "#f5f5f5",
+            borderRadius: 10,
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            color: "#000",
+            textAlign: "center",
+            marginLeft: "auto",
+          }}
+        >
+          {location}
+        </div>
+      )}
       <div
         style={{
+          width: "100%",
+          marginTop: 10,
           padding: 10,
-          background: "#f5f5f5",
           borderRadius: 10,
-          display: "flex",
-          justifyContent: "right",
-          alignItems: "right",
           color: "#000",
-          textAlign: "left",
-          marginLeft: "auto",
+          listStyleType: "none",
         }}
       >
-        {location}
+        {text}
       </div>
       {showProfileInfo && <ProfileInfo {...profileInfoProps} />}
     </div>
