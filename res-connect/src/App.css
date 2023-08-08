@@ -8,7 +8,10 @@
 }
 
 .App-header {
-  background-color: #282c34;
+  background-image: url('./background.svg'); /* Change to your actual image path */
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
