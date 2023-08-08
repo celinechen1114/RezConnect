@@ -1,4 +1,3 @@
-import logo from "./background.svg";
 import "./App.css";
 import Profile from "./profile/Profile";
 import profilePic from "./james.png";
@@ -13,12 +12,14 @@ function App() {
           profilePic={profilePic}
           profileInfoProps={{
             name: "James",
-            major: "Computer Science",
+            major: "Business Admin",
             year: "Freshman",
-            interests: ["Coding", "Basketball"],
-            clubs: ["Coding Club", "Basketball Club"],
+            interests: ["Leage of Legends"],
+            clubs: ["Anime Club", "Consulting Club"],
             pronouns: "he/him",
-            contact: "james@example.com",
+            contact: "james@berkeley.edu",
+            intro:
+              "Hello fellow students, gather and hark, For I am James, a spark in the dark. At the heart of the city, or beneath rural ledge, You'll find me immersed in League of Legends. \n\nI'm a gamer, a dreamer, both knight and sage, My arena's the Rift, life's my stage. A Symphony of skills, a crescendo of lights, In the thrill of the battle, I reach new heights.",
           }}
         />
       </header>

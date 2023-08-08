@@ -6,6 +6,7 @@ function ProfileInfo({
   clubs,
   pronouns,
   contact,
+  intro,
 }) {
   return (
     <div
@@ -21,20 +22,51 @@ function ProfileInfo({
         border: "0.50px #E0E5F2 solid",
         boxShadow: "14px 17px 40px 4px rgba(112, 144, 176, 0.08)",
         display: "flex",
-        flexDirection: "column",
-        justifyContent: "flex-start",
-        alignItems: "center",
+        flexDirection: "row",
+        justifyContent: "space-between",
+        alignItems: "stretch",
         gap: 16,
       }}
     >
-      {/* Display the information */}
-      <h2 style={{ color: "#000" }}>{name}</h2>
-      <p style={{ color: "#000" }}>Major: {major}</p>
-      <p style={{ color: "#000" }}>Year: {year}</p>
-      <p style={{ color: "#000" }}>Interests: {interests.join(", ")}</p>
-      <p style={{ color: "#000" }}>Clubs: {clubs.join(", ")}</p>
-      <p style={{ color: "#000" }}>Pronouns: {pronouns}</p>
-      <p style={{ color: "#000" }}>Contact: {contact}</p>
+      <div
+        style={{
+          width: "45%",
+          padding: 10,
+          background: "#f5f5f5",
+          borderRadius: 20,
+          display: "flex",
+          flexDirection: "column",
+          justifyContent: "flex-start",
+          alignItems: "start",
+          gap: 10,
+        }}
+      >
+        <h2 style={{ color: "#000" }}>Basic Details</h2>
+        <p style={{ color: "#000" }}>Name: {name}</p>
+        <p style={{ color: "#000" }}>Major: {major}</p>
+        <p style={{ color: "#000" }}>Year: {year}</p>
+        <p style={{ color: "#000" }}>Interests: {interests.join(", ")}</p>
+        <p style={{ color: "#000" }}>Clubs: {clubs.join(", ")}</p>
+        <p style={{ color: "#000" }}>Pronouns: {pronouns}</p>
+        <p style={{ color: "#000" }}>Contact: {contact}</p>
+      </div>
+      <div
+        style={{
+          width: "45%",
+          padding: 10,
+          background: "#f5f5f5",
+          borderRadius: 20,
+          display: "flex",
+          flexDirection: "column",
+          justifyContent: "flex-start",
+          alignItems: "start",
+          textAlign: "left",
+          gap: 10,
+        }}
+      >
+        <h2 style={{ color: "#000" }}>About me</h2>
+        <p style={{ color: "#000" }}>{intro}</p>
+      </div>
     </div>
   );
 }
