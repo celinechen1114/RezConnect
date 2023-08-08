@@ -1,7 +1,7 @@
 import ProfileInfo from "./ProfileInfo";
 import { useState } from "react";
 
-function Profile({ name, grade, profilePic, profileInfoProps }) {
+function Profile({ name, grade, profilePic, location, profileInfoProps }) {
   // state to control visibility
   const [showProfileInfo, setShowProfileInfo] = useState(false);
 
@@ -43,6 +43,21 @@ function Profile({ name, grade, profilePic, profileInfoProps }) {
         <div style={{ color: "rgba(27, 37, 89, 0.60)", textAlign: "left" }}>
           {grade}
         </div>
+      </div>
+      <div
+        style={{
+          padding: 10,
+          background: "#f5f5f5",
+          borderRadius: 10,
+          display: "flex",
+          justifyContent: "right",
+          alignItems: "right",
+          color: "#000",
+          textAlign: "left",
+          marginLeft: "auto",
+        }}
+      >
+        {location}
       </div>
       {showProfileInfo && <ProfileInfo {...profileInfoProps} />}
     </div>

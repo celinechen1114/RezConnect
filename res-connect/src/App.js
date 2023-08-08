@@ -10,6 +10,7 @@ function App() {
           name="James"
           grade="Freshman"
           profilePic={profilePic}
+          location="Studying at Moffitt Library for the next 2 hours."
           profileInfoProps={{
             name: "James",
             major: "Business Admin",
