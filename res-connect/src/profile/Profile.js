@@ -1,4 +1,17 @@
-function Profile({ name, grade, profilePic }) {
+import ProfileInfo from "./ProfileInfo";
+import { useState } from "react";
+
+function Profile({ name, grade, profilePic, profileInfoProps }) {
+  // state to control visibility
+  const [showProfileInfo, setShowProfileInfo] = useState(false);
+
+  // function to handle clicking outside
+  const handleOutsideClick = (e) => {
+    if (e.target === e.currentTarget) {
+      setShowProfileInfo(false);
+    }
+  };
+
   return (
     <div
       style={{
@@ -14,19 +27,24 @@ function Profile({ name, grade, profilePic }) {
         justifyContent: "flex-start",
         alignItems: "center",
         gap: 16,
+        position: "relative", // make it relative to position the ProfileInfo correctly
       }}
+      onClick={handleOutsideClick}
     >
       <img
         style={{ width: 40, height: 40, borderRadius: 144 }}
         src={profilePic}
         alt="Profile"
       />
-      <div>
+      <div
+        onClick={() => setShowProfileInfo(true)} // toggle visibility on click
+      >
         <div style={{ color: "#1B2559", textAlign: "left" }}>{name}</div>
         <div style={{ color: "rgba(27, 37, 89, 0.60)", textAlign: "left" }}>
           {grade}
         </div>
       </div>
+      {showProfileInfo && <ProfileInfo {...profileInfoProps} />}
     </div>
   );
 }
