@@ -124,4 +124,69 @@
     transform: scale(0.95);
     box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.15), 0 3px 10px 0 rgba(0, 0, 0, 0.12);
 }
+
+.tag-filter {
+    margin-top: 20px; /* Adjust this value as needed */
+}
+
   
+/* General styles for tags */
+.tags-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 15px;
+    justify-content: center;  /* Center the tags horizontally */
+    margin-bottom: 20px;;
+}
+
+.tags-list li {
+    list-style-type: none;
+    padding: 5px 10px;
+    border-radius: 15px;
+    cursor: pointer;
+    text-align: center;
+    font-size: 14px;  /* Adjust as required */
+    transition: transform 0.3s;
+}
+
+.tags-list li:hover {
+    transform: scale(1.05);
+}
+
+.tags-list li.active-tag {
+    font-weight: bold;
+}
+
+/* Individual colors for each tag */
+.tags-list li:nth-child(1) {
+    background-color: #ffadad;
+}
+
+.tags-list li:nth-child(2) {
+    background-color: #ffd6a5;
+}
+
+.tags-list li:nth-child(3) {
+    background-color: #fdffb6;
+}
+
+.tags-list li:nth-child(4) {
+    background-color: #caffbf;
+}
+
+.tags-list li:nth-child(5) {
+    background-color: #9bf6ff;
+}
+
+.tags-list li:nth-child(6) {
+    background-color: #a0c4ff;
+}
+
+.tags-list li:nth-child(7) {
+    background-color: #bdb2ff;
+}
+
+.tags-list li:nth-child(8) {
+    background-color: #ffc6ff;
+}
