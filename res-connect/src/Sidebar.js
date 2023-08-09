@@ -35,7 +35,6 @@ const Sidebar = ({ onPostSelect, posts }) => {
                     ))}
                 </ul>
             </div>
-
             <h2>Posts</h2>
             <ul className="posts">
                 {filteredPosts.map((post, index) => (
