@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import Sidebar from './Sidebar';
-import Panel from './Panel';
+import RASidebar from './RASidebar';
+import RAPanel from './RAPanel';
 import './css/RAFeed.css';
 
 const RAFeed = () => {
@@ -22,8 +22,8 @@ const RAFeed = () => {
 
   return (
     <div className="app-container">
-      <Sidebar onPostSelect={setSelectedPost} posts={posts} />
-      <Panel post={selectedPost} onNewPostSubmit={onNewPostSubmit} />
+      <RASidebar onPostSelect={setSelectedPost} posts={posts} />
+      <RAPanel post={selectedPost} onNewPostSubmit={onNewPostSubmit} />
     </div>
   );
 };

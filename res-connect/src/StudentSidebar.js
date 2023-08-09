@@ -1,10 +1,10 @@
 import React, { useState } from "react";
-import "./css/Sidebar.css";
+import "./css/StudentSidebar.css";
 import { useNavigate } from "react-router-dom";
 import Profile from "./profile/Profile";
 import profilePic from "./james.png";
 
-const Sidebar = ({ onPostSelect, posts }) => {
+const StudentSidebar = ({ onPostSelect, posts }) => {
     const [activeTag, setActiveTag] = useState('all'); // Track the currently selected tag
     const tags = ["all", "sports", "social", "academics", "dorms", "emotional support", "health", "emergency"];
     
@@ -16,15 +16,15 @@ const Sidebar = ({ onPostSelect, posts }) => {
     const filteredPosts = activeTag === 'all' ? posts : posts.filter(post => post.tags && post.tags.includes(activeTag));
 
     return (
-        <div className="sidebar">
-            <div className="title">RezConnect</div>
-            <div className="new-post-button">
+        <div className="student-sidebar">
+            <div className="student-title">RezConnect</div>
+            <div className="student-new-post-button">
                 <button onClick={() => onPostSelect(null)}>New Post</button>
             </div>
 
-            <div className="tag-filter">
+            <div className="student-tag-filter">
                 <h3>Filter by tags</h3>
-                <ul className="tags-list">
+                <ul className="student-tags-list">
                     {tags.map(tag => (
                         <li 
                             key={tag} 
@@ -36,15 +36,15 @@ const Sidebar = ({ onPostSelect, posts }) => {
                 </ul>
             </div>
             <h2>Posts</h2>
-            <ul className="posts">
+            <ul className="student-posts">
                 {filteredPosts.map((post, index) => (
-                    <li className="post-item" key={index} onClick={() => handlePostClick(post)}>
+                    <li className="student-post-item" key={index} onClick={() => handlePostClick(post)}>
                         <h3>{post.title}</h3>
                     </li>
                 ))}
             </ul>
 
-      <div className="profile-button">
+      <div className="student-profile-button">
         <Profile
           name="James"
           grade="Freshman"
@@ -67,4 +67,4 @@ const Sidebar = ({ onPostSelect, posts }) => {
   );
 };
 
-export default Sidebar;
+export default StudentSidebar;
