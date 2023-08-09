@@ -94,5 +94,34 @@
 
   .posts {
     width: 100%; /* takes up the remaining width of the sidebar */
-  }
+    display: flex;
+    flex-direction: column;
+    gap: 10px; /* creates a gap between posts */
+}
+
+.post-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 100px;
+    padding: 10px;  /* reduced padding for a smaller appearance */
+    /* font-size: 16px;  reduced font size */
+    background-color: #430453;
+    color: black;
+    border: none;
+    width: calc(100% - 20px);  /* this should match the width of .new-post-button */
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    text-align: center;  /* to center the text */
+}
+
+.post-item:hover {
+    background-color: rgba(155, 92, 153, 0.56);
+}
+
+.post-item:active {
+    transform: scale(0.95);
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.15), 0 3px 10px 0 rgba(0, 0, 0, 0.12);
+}
   
