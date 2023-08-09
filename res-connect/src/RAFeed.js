@@ -10,6 +10,7 @@ const RAFeed = () => {
 
   const handlePostSelect = (post) => {
     setSelectedPost(post);
+    setSelectedContent(null);
   };
 
   const onNewPostSubmit = (newPost) => {
@@ -24,7 +25,7 @@ const RAFeed = () => {
   return (
     <div className="app-container">
       <Sidebar
-        onPostSelect={setSelectedPost}
+        onPostSelect={handlePostSelect}
         setSelectedContent={setSelectedContent}
         posts={posts}
       />
