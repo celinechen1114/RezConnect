@@ -3,6 +3,7 @@ import "./css/RASidebar.css";
 import { useNavigate } from "react-router-dom";
 import Profile from "./profile/Profile";
 import profilePic from "./emilie.png";
+import postIcon from "./chat.png";
 
 const RASidebar = ({ onPostSelect, posts }) => {
     const [activeTag, setActiveTag] = useState('all'); 
@@ -40,6 +41,7 @@ const RASidebar = ({ onPostSelect, posts }) => {
             <ul className="posts">
                 {filteredPosts.map((post, index) => (
                     <li className="post-item" key={index} onClick={() => handlePostClick(post)}>
+                        <img src={postIcon} alt="Chat Icon" className="post-icon"/>
                         <h3>{post.title}</h3>
                     </li>
                 ))}

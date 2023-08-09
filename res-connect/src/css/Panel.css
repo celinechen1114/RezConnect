@@ -127,6 +127,9 @@
     display: none;
 }
 
+.tag-selection label:hover {
+    background-color: #3c5670;
+}
 
 .tag-selection div:nth-child(1) label { background-color: #ffd6a5; }
 .tag-selection div:nth-child(2) label { background-color: #fdffb6; }

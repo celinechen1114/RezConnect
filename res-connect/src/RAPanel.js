@@ -152,16 +152,19 @@ const RAPanel = ({ post, onNewPostSubmit }) => {
 return (
     <div className="panel-container">
         <div className="panel-post-item">
+        <div className="identity-section">
+                {/* <span>Username</span>  Replace with actual username */}
+                {/* Celine's comment: the TIMESTAMP is now moved to the top of the div! */}
+                <span>{new Date(post.timestamp).toLocaleString()}</span>
+            </div>
+
             <Profile
             name="Emilie"
             grade="Resident Advisor"
             profilePic={profilePic}
             ></Profile>
             {/* Identity Section */}
-            <div className="identity-section">
-                {/* <span>Username</span>  Replace with actual username */}
-                <span>{new Date(post.timestamp).toLocaleString()}</span>
-            </div>
+            
 
             {/* Post Title */}
             <h2 className="post-title">{post.title}</h2>
