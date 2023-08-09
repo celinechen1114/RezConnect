@@ -1,16 +1,16 @@
 import React, { useState } from "react";
-import "./css/Sidebar.css";
+import "./css/RASidebar.css";
 import { useNavigate } from "react-router-dom";
 import Profile from "./profile/Profile";
 import profilePic from "./james.png";
 
-const Sidebar = ({ onPostSelect, posts }) => {
-    const [activeTag, setActiveTag] = useState('all'); // Track the currently selected tag
+const RASidebar = ({ onPostSelect, posts }) => {
+    const [activeTag, setActiveTag] = useState('all'); 
     const tags = ["all", "sports", "social", "academics", "dorms", "emotional support", "health", "emergency"];
     
     const handlePostClick = (post) => {
         onPostSelect(post);
-        setActiveTag('all'); // reset the filter after post selection
+        setActiveTag('all'); 
     }
 
     const filteredPosts = activeTag === 'all' ? posts : posts.filter(post => post.tags && post.tags.includes(activeTag));
@@ -23,7 +23,7 @@ const Sidebar = ({ onPostSelect, posts }) => {
             </div>
 
             <div className="tag-filter">
-                <h3>Filter by tags</h3>
+                <h3 style={{fontWeight:'bold'}}>Filter by tags</h3>
                 <ul className="tags-list">
                     {tags.map(tag => (
                         <li 
@@ -36,7 +36,7 @@ const Sidebar = ({ onPostSelect, posts }) => {
                 </ul>
             </div>
 
-            <h2>Posts</h2>
+            <h3 style={{fontWeight:'bold'}}>Posts</h3>
             <ul className="posts">
                 {filteredPosts.map((post, index) => (
                     <li className="post-item" key={index} onClick={() => handlePostClick(post)}>
@@ -47,20 +47,20 @@ const Sidebar = ({ onPostSelect, posts }) => {
 
       <div className="profile-button">
         <Profile
-          name="James"
-          grade="Freshman"
+          name="Emilie"
+          grade="Resident Advisor"
           profilePic={profilePic}
           location=""
           profileInfoProps={{
-            name: "James",
-            major: "Business Admin",
-            year: "Freshman",
-            interests: ["Leage of Legends"],
-            clubs: ["Anime Club", "Consulting Club"],
-            pronouns: "he/him",
-            contact: "james@berkeley.edu",
+            name: "Emilie Johnson",
+            major: "Computer Science",
+            year: "Junior",
+            interests: ["Tennis"],
+            clubs: ["Tennis Club", "Robotics Club"],
+            pronouns: "she/her/hers",
+            contact: "emilie@berkeley.edu",
             intro:
-              "Hello fellow students, gather and hark, For I am James, a spark in the dark. At the heart of the city, or beneath rural ledge, You'll find me immersed in League of Legends. \n\nI'm a gamer, a dreamer, both knight and sage, My arena's the Rift, life's my stage. A Symphony of skills, a crescendo of lights, In the thrill of the battle, I reach new heights.",
+              "Hey everyone, I am your RA from Unit 1 Floor 2."
           }}
         />
       </div>
@@ -68,4 +68,4 @@ const Sidebar = ({ onPostSelect, posts }) => {
   );
 };
 
-export default Sidebar;
+export default RASidebar;

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import './css/Panel.css';
+import './css/StudentPanel.css';
 
-const Panel = ({ post, onNewPostSubmit }) => {
+const StudentPanel = ({ post, onNewPostSubmit }) => {
     const [title, setTitle] = useState("");
     const [body, setBody] = useState("");
     const [comment, setComment] = useState("");
@@ -57,7 +57,7 @@ const Panel = ({ post, onNewPostSubmit }) => {
 
     if (post === null) {
         return (
-            <div className="panel-container">
+            <div className="student-panel-container">
                 <form onSubmit={handleSubmit}>
                 <input
                     type="text"
@@ -75,7 +75,7 @@ const Panel = ({ post, onNewPostSubmit }) => {
                 />
 
                 <span style={{ display: 'block', width: '80%', textAlign: 'left', marginLeft: '10%', fontWeight:'bold' }}>Select Tags</span>
-                <div className="tag-selection">
+                <div className="student-tag-selection">
                     {tags.map(tag => (
                         <div key={tag}>
                             <input 
@@ -90,7 +90,7 @@ const Panel = ({ post, onNewPostSubmit }) => {
                     ))}
                 </div>
 
-                    <button type="submit" className="submit-btn">Submit</button>
+                    <button type="submit" className="student-submit-btn">Submit</button>
 
                 </form>
             </div>
@@ -98,35 +98,51 @@ const Panel = ({ post, onNewPostSubmit }) => {
     }
 
     if (!post) {
-        return <div className="panel-container">Select a post to view details.</div>;
+        return <div className="student-blank-panel-container">Select a post to view details</div>;
     }
 
-    return (
-        <div className="panel-container">
-            <div className="post-item">
-                <h2 className="post-title">{post.title}</h2>
-                <small>{new Date(post.timestamp).toLocaleString()}</small>
-                <p className="post-body">{post.body}</p>
-                {post.comments && post.comments.length > 0 && (
-                    <ul className="comments-list">
-                        {post.comments.map((comment, cIndex) => (
-                            <li key={cIndex} className="comment-item">{comment}</li>
-                        ))}
-                    </ul>
-                )}
-                <form onSubmit={handleCommentSubmit}>
-                    <input
-                        type="text"
-                        value={comment}
-                        onChange={handleCommentChange}
-                        placeholder="Add a comment..."
-                        required
-                    />
-                    <button type="submit">Add Comment</button>
-                </form>
+
+return (
+    <div className="student-panel-container">
+        <div className="student-post-item">
+            {/* Identity Section */}
+            <div className="student-identity-section">
+                <span>Username</span>  {/* Replace this with the actual username when available */}
+                <span>{new Date(post.timestamp).toLocaleString()}</span>
             </div>
+
+            {/* Post Title */}
+            <h2 className="student-post-title">{post.title}</h2>
+
+            {/* Post Body */}
+            <p className="student-post-body">{post.body}</p>
+
+            {/* Comments Section */}
+            {post.comments && post.comments.length > 0 && (
+                <ul className="student-comments-list">
+                    {post.comments.map((comment, cIndex) => (
+                        <li key={cIndex} className="student-comment-item">{comment}</li>
+                    ))}
+                </ul>
+            )}
         </div>
-    );
+        {/* Comment Submission */}
+        <div className="student-comment-section">
+            <form onSubmit={handleCommentSubmit} className="student-comment-section">
+                <input
+                    type="text"
+                    value={comment}
+                    onChange={handleCommentChange}
+                    placeholder="Add a comment..."
+                    required
+                />
+                <button type="submit">Add</button>
+            </form>
+        </div>
+    </div>
+);
+
+    
 };
 
-export default Panel;
+export default StudentPanel;
