@@ -1,12 +1,11 @@
 import React, { useState } from "react";
-import "./css/Sidebar.css";
+import "./css/StudentSidebar.css";
 import { useNavigate } from "react-router-dom";
 import Profile from "./profile/Profile";
 import profilePic from "./james.png";
 
-const Sidebar = ({ onPostSelect, setSelectedContent, posts }) => {
+const StudentSidebar = ({ onPostSelect, posts }) => {
   const [activeTag, setActiveTag] = useState("all"); // Track the currently selected tag
-
   const tags = [
     "all",
     "sports",
@@ -29,15 +28,15 @@ const Sidebar = ({ onPostSelect, setSelectedContent, posts }) => {
       : posts.filter((post) => post.tags && post.tags.includes(activeTag));
 
   return (
-    <div className="sidebar">
-      <div className="title">RezConnect</div>
-      <div className="new-post-button">
+    <div className="student-sidebar">
+      <div className="student-title">RezConnect</div>
+      <div className="student-new-post-button">
         <button onClick={() => onPostSelect(null)}>New Post</button>
       </div>
 
-      <div className="tag-filter">
+      <div className="student-tag-filter">
         <h3>Filter by tags</h3>
-        <ul className="tags-list">
+        <ul className="student-tags-list">
           {tags.map((tag) => (
             <li
               key={tag}
@@ -50,10 +49,10 @@ const Sidebar = ({ onPostSelect, setSelectedContent, posts }) => {
         </ul>
       </div>
       <h2>Posts</h2>
-      <ul className="posts">
+      <ul className="student-posts">
         {filteredPosts.map((post, index) => (
           <li
-            className="post-item"
+            className="student-post-item"
             key={index}
             onClick={() => handlePostClick(post)}
           >
@@ -62,39 +61,27 @@ const Sidebar = ({ onPostSelect, setSelectedContent, posts }) => {
         ))}
       </ul>
 
-      <div
-        className="profile-button"
-        onClick={() => setSelectedContent("profile")}
-      >
+      <div className="student-profile-button">
         <Profile
           name="James"
           grade="Freshman"
           profilePic={profilePic}
           location=""
+          profileInfoProps={{
+            name: "James",
+            major: "Business Admin",
+            year: "Freshman",
+            interests: ["Leage of Legends"],
+            clubs: ["Anime Club", "Consulting Club"],
+            pronouns: "he/him",
+            contact: "james@berkeley.edu",
+            intro:
+              "Hello fellow students, gather and hark, For I am James, a spark in the dark. At the heart of the city, or beneath rural ledge, You'll find me immersed in League of Legends. \n\nI'm a gamer, a dreamer, both knight and sage, My arena's the Rift, life's my stage. A Symphony of skills, a crescendo of lights, In the thrill of the battle, I reach new heights.",
+          }}
         />
       </div>
-
-      {/* <div className="profile-button">
-        <Profile
-          name="James"
-          grade="Freshman"
-          profilePic={profilePic}
-          location=""
-          // profileInfoProps={{
-          //   name: "James",
-          //   major: "Business Admin",
-          //   year: "Freshman",
-          //   interests: ["Leage of Legends"],
-          //   clubs: ["Anime Club", "Consulting Club"],
-          //   pronouns: "he/him",
-          //   contact: "james@berkeley.edu",
-          //   intro:
-          //     "Hello fellow students, gather and hark, For I am James, a spark in the dark. At the heart of the city, or beneath rural ledge, You'll find me immersed in League of Legends. \n\nI'm a gamer, a dreamer, both knight and sage, My arena's the Rift, life's my stage. A Symphony of skills, a crescendo of lights, In the thrill of the battle, I reach new heights.",
-          // }}
-        />
-      </div> */}
     </div>
   );
 };
 
-export default Sidebar;
+export default StudentSidebar;
