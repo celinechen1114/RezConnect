@@ -60,36 +60,40 @@ const Panel = ({ post, onNewPostSubmit }) => {
     if (post === null) {
         return (
             <div className="panel-container">
-                <h2>Create New Post</h2>
                 <form onSubmit={handleSubmit}>
-                    <input
-                        type="text"
-                        value={title}
-                        onChange={handleChangeTitle}
-                        placeholder="Post Title"
-                        required
-                    />
-                    <textarea
-                        value={body}
-                        onChange={handleChangeBody}
-                        placeholder="Post Content"
-                        required
-                    />
-                    <div className="tag-selection">
-                        <span>Select Tags:</span>
-                        {tags.map(tag => (
-                            <label key={tag}>
-                                <input 
-                                    type="checkbox" 
-                                    value={tag}
-                                    onChange={handleTagChange}
-                                    checked={selectedTags.includes(tag)}
-                                />
-                                {tag}
-                            </label>
-                        ))}
-                    </div>
-                    <button type="submit">Submit</button>
+                <input
+                    type="text"
+                    value={title}
+                    onChange={handleChangeTitle}
+                    placeholder="What's your title?"
+                    required
+                />
+
+                <textarea
+                    value={body}
+                    onChange={handleChangeBody}
+                    placeholder="What's on your mind?"
+                    required
+                />
+
+                <span style={{ display: 'block', width: '80%', textAlign: 'left', marginLeft: '10%', fontWeight:'bold' }}>Select Tags</span>
+                <div className="tag-selection">
+                    {tags.map(tag => (
+                        <div key={tag}>
+                            <input 
+                                id={`tag-${tag}`} 
+                                type="checkbox" 
+                                value={tag}
+                                onChange={handleTagChange}
+                                checked={selectedTags.includes(tag)}
+                            />
+                            <label htmlFor={`tag-${tag}`}>{tag}</label>
+                        </div>
+                    ))}
+                </div>
+
+                    <button type="submit" className="submit-btn">Submit</button>
+
                 </form>
             </div>
         );
