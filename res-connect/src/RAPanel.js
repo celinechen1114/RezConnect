@@ -189,9 +189,14 @@ return (
         <div className="comments-list">
             {post.comments && post.comments.map((commentObj, cIndex) => (
                 <div key={cIndex} className="comment-item">
+                     <Profile
+                        name="Emilie"
+                        grade="Resident Advisor"
+                        profilePic={profilePic}
+                        ></Profile>
                     <div className="comment-user-info">
-                        <span>{commentObj.username}</span>
-                        <span>{new Date(commentObj.timestamp).toLocaleString()}</span>
+                        {/* <span>{commentObj.username}</span> */}
+                        {/* <span>{new Date(commentObj.timestamp).toLocaleString()}</span> */}
                     </div>
                     <div className="comment-text-box">
                         <p className="comment-text">{commentObj.text}</p>
