@@ -217,7 +217,7 @@
 
 .post-title, .post-body {
     display: block;
-    width: 80%; 
+    width: 100%; 
     margin: 10px auto;  
     padding: 10px 15px;
     border: none;
@@ -234,7 +234,8 @@
 }
 
 .post-body {
-    height: 100px; 
+    height: 200px; 
+    width: 100%; 
     text-align: left;
     overflow-wrap: break-word; 
 }

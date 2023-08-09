@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "./css/RASidebar.css";
 import { useNavigate } from "react-router-dom";
 import Profile from "./profile/Profile";
-import profilePic from "./james.png";
+import profilePic from "./emilie.png";
 
 const RASidebar = ({ onPostSelect, posts }) => {
     const [activeTag, setActiveTag] = useState('all'); 

@@ -1,5 +1,9 @@
 import React, { useState } from 'react';
 import './css/RAPanel.css';
+import Profile from "./profile/Profile";
+import profilePic from "./emilie.png";
+
+
 
 const RAPanel = ({ post, onNewPostSubmit }) => {
     const [title, setTitle] = useState("");
@@ -148,9 +152,14 @@ const RAPanel = ({ post, onNewPostSubmit }) => {
 return (
     <div className="panel-container">
         <div className="panel-post-item">
+            <Profile
+            name="Emilie"
+            grade="Resident Advisor"
+            profilePic={profilePic}
+            ></Profile>
             {/* Identity Section */}
             <div className="identity-section">
-                <span>Username</span>  {/* Replace with actual username */}
+                {/* <span>Username</span>  Replace with actual username */}
                 <span>{new Date(post.timestamp).toLocaleString()}</span>
             </div>
 
