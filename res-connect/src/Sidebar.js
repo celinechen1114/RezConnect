@@ -29,9 +29,9 @@ const Sidebar = ({ onPostSelect }) => {
     setBody("");
   };
 
-  // const handleProfileClick = () => {
-  //   navigate("/profile"); // replace '/other-page' with the path you want to navigate to
-  // };
+  const handleProfileClick = () => {
+    navigate("/profile"); // replace '/other-page' with the path you want to navigate to
+  };
 
   return (
     <div className="sidebar">
