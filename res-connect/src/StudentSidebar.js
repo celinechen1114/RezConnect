@@ -35,7 +35,6 @@ const StudentSidebar = ({ onPostSelect, posts }) => {
                     ))}
                 </ul>
             </div>
-
             <h2>Posts</h2>
             <ul className="student-posts">
                 {filteredPosts.map((post, index) => (
