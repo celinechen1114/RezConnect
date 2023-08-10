@@ -229,7 +229,7 @@
     color: rgba(0, 0, 0, 0.5);
 }
 
-.post-title, .post-body {
+.post-title, .panel-post-body {
     display: block;
     width: 100%; 
     margin: 10px auto;  
@@ -245,17 +245,14 @@
 .post-title {
     font-weight: bold; 
     text-align: left;
+    margin: 10px auto;
 }
 
-.post-body {
+.panel-post-body {
     height: 200px; 
     width: 100%; 
     text-align: left;
     overflow-wrap: break-word; 
-}
-
-.post-title {
-    margin: 10px auto;
 }
 
 .post-actions {
@@ -268,7 +265,7 @@
 
 
 .post-actions button {
-    width: 10px;
+    width: 30px;
     height: 50px;
     display: flex; 
     gap: 10px;
@@ -276,6 +273,8 @@
     align-items: center;
     margin-top: 10px; 
     border-radius: 10px;
+    margin: 8px auto; 
+    padding: 10px 15px;
 }
 
 
@@ -286,7 +285,7 @@
 
 
 .post-actions button:hover .material-icons  {
-    color: #1F6F12;
+    color: gold;
  }
 
 
@@ -367,6 +366,17 @@
     overflow-y: auto; 
 }
 
+.comments-title {
+    display: block;
+    font-weight: bold;
+    width: 100%; 
+    margin: 10px auto;  
+    /* align-items: left; */
+    text-align: left;
+    /* margin-left: auto; */
+}
+
+
 .comment-item {
     margin-left: auto;
     margin-right: auto;
@@ -380,6 +390,7 @@
 }
 
 .comment-text-box {
+    margin-top: 20px;
     padding: 10px;
     background-color: #fff;
     border-radius: 5px;
@@ -412,15 +423,18 @@
 }
 
 .comment-actions button:hover .material-icons  {
-    color: #1F6F12;
+    color: gold
  }
-
-
 
 
 .comment-actions button:active {
     transform: scale(0.95);
     box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.15), 0 3px 10px 0 rgba(0, 0, 0, 0.12);
+}
+
+/* When button retains focus after being clicked, the icon stays gold */
+.comment-actions button:focus .material-icons {
+    color: gold;
 }
 
 .comment-user-info {
@@ -470,4 +484,22 @@
     border: none;
     border-radius: 4px;
     cursor: pointer;
+}
+/* 
+.comment-actions button.liked .material-icons,
+.comment-actions button.disliked .material-icons {
+    color: gold;
+}
+
+.comment-actions button.star-focus .material-icons {
+    color: gold; */
+/* } */
+
+.post-actions button.liked .material-icons,
+.post-actions button.disliked .material-icons {
+    color: gold;
+}
+
+.post-actions button.star-focus .material-icons {
+    color: gold;
 }

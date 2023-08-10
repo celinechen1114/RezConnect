@@ -19,6 +19,13 @@ const RAPanel = ({ post, selectedContent, onNewPostSubmit }) => {
     "sports",
   ];
 
+  
+
+  const [liked, setLiked] = useState(false);
+  const [disliked, setDisliked] = useState(false);
+  const [starFocused, setStarFocused] = useState(false);
+
+
   const handleChangeTitle = (event) => {
     setTitle(event.target.value);
   };
@@ -50,34 +57,52 @@ const RAPanel = ({ post, selectedContent, onNewPostSubmit }) => {
     }
   };
 
+   const [postLiked, setPostLiked] = useState(false);
+   const [postDisliked, setPostDisliked] = useState(false);
+   const [postStarFocused, setPostStarFocused] = useState(false);
+
   const handlePostThumbsUp = () => {
     post.thumbsUp = (post.thumbsUp || 0) + 1;
+    setPostLiked(true);
+    setPostDisliked(false);
   };
-
+  
   const handlePostThumbsDown = () => {
     post.thumbsDown = (post.thumbsDown || 0) + 1;
+    setPostLiked(false);
+    setPostDisliked(true);
   };
-
+  
   const handlePostEndorse = () => {
     post.endorsed = !post.endorsed;
+    setPostStarFocused(prev => !prev);  // toggles the state of starFocused for post
   };
+  
 
   const handleThumbsUp = (cIndex) => {
     const updatedComments = [...post.comments];
     updatedComments[cIndex].thumbsUp = 1;
     post.comments = updatedComments;
+    setLiked(true);
+    setDisliked(false);
+
   };
 
   const handleThumbsDown = (cIndex) => {
     const updatedComments = [...post.comments];
     updatedComments[cIndex].thumbsDown = 1;
     post.comments = updatedComments;
+    setLiked(false);
+    setDisliked(true);
+
   };
 
   const handleEndorse = (cIndex) => {
     const updatedComments = [...post.comments];
     updatedComments[cIndex].endorsed = !updatedComments[cIndex].endorsed;
     post.comments = updatedComments;
+    setStarFocused(prev => !prev);  // toggles the state of starFocused
+
   };
 
   const handleTagChange = (event) => {
@@ -209,25 +234,28 @@ const RAPanel = ({ post, selectedContent, onNewPostSubmit }) => {
           <h2 className="post-title">{post.title}</h2>
 
           {/* Post Body */}
-          <p className="post-body">{post.body}</p>
+          <p className="panel-post-body">{post.body}</p>
 
           {/* Post Action Buttons */}
           <div className="post-actions">
-            <button onClick={handlePostThumbsUp}>
-              <i className="material-icons">thumb_up</i>
-            </button>
-            <button onClick={handlePostThumbsDown}>
-              <i className="material-icons">thumb_down</i>
-            </button>
-            <button onClick={handlePostEndorse}>
-              <i className="material-icons">star</i>
-            </button>
-          </div>
+                <button onClick={handlePostThumbsUp} className={postLiked ? 'liked' : ''}>
+                    <i className="material-icons">thumb_up</i>
+                </button>
+                <button onClick={handlePostThumbsDown} className={postDisliked ? 'disliked' : ''}>
+                    <i className="material-icons">thumb_down</i>
+                </button>
+                <button onClick={handlePostEndorse} className={postStarFocused ? 'star-focus' : ''}>
+                    <i className="material-icons">star</i>
+                </button>
+            </div>
         </div>
 
-        <h3 style={{ fontWeight: "bold", textAlign: "left" }}>Comments</h3>
+        
         {/* Comments List */}
+        
         <div className="comments-list">
+            <div className="comments-title">Comments</div>
+            {/* <h3 style={{ fontWeight: "bold", textAlign: "left" }}>Comments</h3> */}
           {post.comments &&
             post.comments.map((commentObj, cIndex) => (
               <div key={cIndex} className="comment-item">
@@ -236,10 +264,10 @@ const RAPanel = ({ post, selectedContent, onNewPostSubmit }) => {
                   grade="Resident Advisor"
                   profilePic={profilePic}
                 ></Profile>
-                <div className="comment-user-info">
+                {/* <div className="comment-user-info"> */}
                   {/* <span>{commentObj.username}</span> */}
                   {/* <span>{new Date(commentObj.timestamp).toLocaleString()}</span> */}
-                </div>
+                {/* </div> */}
                 <div className="comment-text-box">
                   <p className="comment-text">{commentObj.text}</p>
                 </div>
