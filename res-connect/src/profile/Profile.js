@@ -7,19 +7,19 @@ function Profile({
   profilePic,
   initialLocation,
   text,
-  profileInfoProps,
+  // profileInfoProps,
 }) {
   // state to control visibility
-  const [showProfileInfo, setShowProfileInfo] = useState(false);
+  // const [showProfileInfo, setShowProfileInfo] = useState(false);
   const [isEditingLocation, setIsEditingLocation] = useState(false);
   const [location, setLocation] = useState(initialLocation || "");
 
   // function to handle clicking outside
-  const handleOutsideClick = (e) => {
-    if (e.target === e.currentTarget) {
-      setShowProfileInfo(false);
-    }
-  };
+  // const handleOutsideClick = (e) => {
+  //   if (e.target === e.currentTarget) {
+  //     setShowProfileInfo(false);
+  //   }
+  // };
 
   const handleLocationChange = (event) => {
     setLocation(event.target.value);
@@ -52,7 +52,7 @@ function Profile({
         position: "relative", // make it relative to position the ProfileInfo correctly
         listStyleType: "none",
       }}
-      onClick={handleOutsideClick}
+      // onClick={handleOutsideClick}
     >
       <img
         style={{ width: 40, height: 40, borderRadius: 144 }}
@@ -60,7 +60,7 @@ function Profile({
         alt="Profile"
       />
       <div
-        onClick={() => setShowProfileInfo(true)} // toggle visibility on click
+      // toggle visibility on click
       >
         <div style={{ color: "#1B2559", textAlign: "left" }}>{name}</div>
         <div
@@ -123,7 +123,7 @@ function Profile({
           {text}
         </div>
       )}
-      {showProfileInfo && <ProfileInfo {...profileInfoProps} />}
+      {/* {showProfileInfo && <ProfileInfo {...profileInfoProps} />} */}
     </div>
   );
 }

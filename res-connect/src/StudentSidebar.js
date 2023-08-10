@@ -5,44 +5,61 @@ import Profile from "./profile/Profile";
 import profilePic from "./james.png";
 
 const StudentSidebar = ({ onPostSelect, posts }) => {
-    const [activeTag, setActiveTag] = useState('all'); // Track the currently selected tag
-    const tags = ["all", "sports", "social", "academics", "dorms", "emotional support", "health", "emergency"];
-    
-    const handlePostClick = (post) => {
-        onPostSelect(post);
-        setActiveTag('all'); // reset the filter after post selection
-    }
+  const [activeTag, setActiveTag] = useState("all"); // Track the currently selected tag
+  const tags = [
+    "all",
+    "sports",
+    "social",
+    "academics",
+    "dorms",
+    "emotional support",
+    "health",
+    "emergency",
+  ];
 
-    const filteredPosts = activeTag === 'all' ? posts : posts.filter(post => post.tags && post.tags.includes(activeTag));
+  const handlePostClick = (post) => {
+    onPostSelect(post);
+    setActiveTag("all"); // reset the filter after post selection
+  };
 
-    return (
-        <div className="student-sidebar">
-            <div className="student-title">RezConnect</div>
-            <div className="student-new-post-button">
-                <button onClick={() => onPostSelect(null)}>New Post</button>
-            </div>
+  const filteredPosts =
+    activeTag === "all"
+      ? posts
+      : posts.filter((post) => post.tags && post.tags.includes(activeTag));
 
-            <div className="student-tag-filter">
-                <h3>Filter by tags</h3>
-                <ul className="student-tags-list">
-                    {tags.map(tag => (
-                        <li 
-                            key={tag} 
-                            className={activeTag === tag ? "active-tag" : ""} 
-                            onClick={() => setActiveTag(tag)}>
-                            {tag}
-                        </li>
-                    ))}
-                </ul>
-            </div>
-            <h2>Posts</h2>
-            <ul className="student-posts">
-                {filteredPosts.map((post, index) => (
-                    <li className="student-post-item" key={index} onClick={() => handlePostClick(post)}>
-                        <h3>{post.title}</h3>
-                    </li>
-                ))}
-            </ul>
+  return (
+    <div className="student-sidebar">
+      <div className="student-title">RezConnect</div>
+      <div className="student-new-post-button">
+        <button onClick={() => onPostSelect(null)}>New Post</button>
+      </div>
+
+      <div className="student-tag-filter">
+        <h3>Filter by tags</h3>
+        <ul className="student-tags-list">
+          {tags.map((tag) => (
+            <li
+              key={tag}
+              className={activeTag === tag ? "active-tag" : ""}
+              onClick={() => setActiveTag(tag)}
+            >
+              {tag}
+            </li>
+          ))}
+        </ul>
+      </div>
+      <h2>Posts</h2>
+      <ul className="student-posts">
+        {filteredPosts.map((post, index) => (
+          <li
+            className="student-post-item"
+            key={index}
+            onClick={() => handlePostClick(post)}
+          >
+            <h3>{post.title}</h3>
+          </li>
+        ))}
+      </ul>
 
       <div className="student-profile-button">
         <Profile
