@@ -1,22 +1,37 @@
 .blank-panel-container {
-    display: flex; 
-    flex: 1; 
-    margin-left: 310px; 
+    display: flex;
+    flex-direction: column; /* Stack elements vertically */
+    margin-left: 310px;
     width: calc(100% - 310px - 70px);
     padding: 10px;
     height: calc(100vh - 40px);
     overflow: auto;
-    background-color: white;
+    background-color: #C3E2BE;
+    border: 8px solid white; /* Border size and color */
     border-radius: 30px;
     opacity: 1;
     position: fixed;
     right: 30px;
     top: 10px;
-    justify-content: center;  
-    align-items: center;     
-    font-size: 100px;
-    color: grey;
-}
+    justify-content: center;
+    align-items: center;
+    color: #1F6F12;
+  }
+  
+  .blank-panel-container h1 {
+    font-size: 75px; 
+    color:white
+  }
+  
+  .blank-panel-container p {
+    font-size: 20px; 
+    font-weight:bolder;
+  }
+  
+
+
+
+
 
 .panel-container {
     display: flex;
@@ -97,7 +112,7 @@
 
 }
 
-.comment-section {
+/* .comment-section {
     display: flex;
     align-items: center;
   }
@@ -126,7 +141,16 @@
 
 .comment-section button:hover {
     background-color: #C3E2BE;
-}
+} */
+
+.comment-form {
+    display: flex;
+    align-items: center; /* Vertically center align items */
+  }
+  
+  .comment-button {
+    margin-left: 10px; /* Add spacing between input and button */
+  }
 
 .tag-selection {
     display: flex;
@@ -337,7 +361,6 @@
     align-items: center;
     font-size: 1em;
     font-weight: bold;
-
 }
 
 .comment-section button:hover {
@@ -370,10 +393,10 @@
     display: block;
     font-weight: bold;
     width: 100%; 
-    margin: 10px auto;  
-    /* align-items: left; */
+    right: 30px;
+    top: 10px;
     text-align: left;
-    /* margin-left: auto; */
+    margin-left: min(95px, 10%);
 }
 
 
