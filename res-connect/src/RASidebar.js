@@ -1,71 +1,94 @@
 import React, { useState } from "react";
 import "./css/RASidebar.css";
-import { useNavigate } from "react-router-dom";
 import Profile from "./profile/Profile";
 import profilePic from "./emilie.png";
 
-const RASidebar = ({ onPostSelect, posts }) => {
-    const [activeTag, setActiveTag] = useState('all'); 
-    const tags = ["all", "sports", "social", "academics", "dorms", "emotional support", "health", "emergency"];
-    
-    const handlePostClick = (post) => {
-        onPostSelect(post);
-        setActiveTag('all'); 
-    }
+const Sidebar = ({ onPostSelect, setSelectedContent, posts }) => {
+  const [activeTag, setActiveTag] = useState("all"); // Track the currently selected tag
 
-    const filteredPosts = activeTag === 'all' ? posts : posts.filter(post => post.tags && post.tags.includes(activeTag));
+  const tags = [
+    "all",
+    "sports",
+    "social",
+    "academics",
+    "dorms",
+    "emotional support",
+    "health",
+    "emergency",
+  ];
 
-    return (
-        <div className="sidebar">
-            <div className="title">RezConnect</div>
-            <div className="new-post-button">
-                <button onClick={() => onPostSelect(null)}>New Post</button>
-            </div>
+  const handlePostClick = (post) => {
+    onPostSelect(post);
+    setActiveTag("all"); // reset the filter after post selection
+  };
 
-            <div className="tag-filter">
-                <h3 style={{fontWeight:'bold'}}>Filter by tags</h3>
-                <ul className="tags-list">
-                    {tags.map(tag => (
-                        <li 
-                            key={tag} 
-                            className={activeTag === tag ? "active-tag" : ""} 
-                            onClick={() => setActiveTag(tag)}>
-                            {tag}
-                        </li>
-                    ))}
-                </ul>
-            </div>
+  const filteredPosts =
+    activeTag === "all"
+      ? posts
+      : posts.filter((post) => post.tags && post.tags.includes(activeTag));
 
-            <h3 style={{fontWeight:'bold'}}>Posts</h3>
-            <ul className="posts">
-                {filteredPosts.map((post, index) => (
-                    <li className="post-item" key={index} onClick={() => handlePostClick(post)}>
-                        <h3>{post.title}</h3>
-                    </li>
-                ))}
-            </ul>
+  return (
+    <div className="sidebar">
+      <div className="title">RezConnect</div>
+      <div className="new-post-button">
+        <button onClick={() => onPostSelect(null)}>New Post</button>
+      </div>
 
-      <div className="profile-button">
+      <div className="tag-filter">
+        <h3>Filter by tags</h3>
+        <ul className="tags-list">
+          {tags.map((tag) => (
+            <li
+              key={tag}
+              className={activeTag === tag ? "active-tag" : ""}
+              onClick={() => setActiveTag(tag)}
+            >
+              {tag}
+            </li>
+          ))}
+        </ul>
+      </div>
+      <h2>Posts</h2>
+      <ul className="posts">
+        {filteredPosts.map((post, index) => (
+          <li
+            className="post-item"
+            key={index}
+            onClick={() => handlePostClick(post)}
+          >
+            <h3>{post.title}</h3>
+          </li>
+        ))}
+      </ul>
+
+      <div
+        className="profile-button"
+        onClick={() => setSelectedContent("profile")}
+      >
+        <Profile name="Emilie" grade="RA" profilePic={profilePic} location="" />
+      </div>
+
+      {/* <div className="profile-button">
         <Profile
-          name="Emilie"
-          grade="Resident Advisor"
+          name="James"
+          grade="Freshman"
           profilePic={profilePic}
           location=""
-          profileInfoProps={{
-            name: "Emilie Johnson",
-            major: "Computer Science",
-            year: "Junior",
-            interests: ["Tennis"],
-            clubs: ["Tennis Club", "Robotics Club"],
-            pronouns: "she/her/hers",
-            contact: "emilie@berkeley.edu",
-            intro:
-              "Hey everyone, I am your RA from Unit 1 Floor 2."
-          }}
+          // profileInfoProps={{
+          //   name: "James",
+          //   major: "Business Admin",
+          //   year: "Freshman",
+          //   interests: ["Leage of Legends"],
+          //   clubs: ["Anime Club", "Consulting Club"],
+          //   pronouns: "he/him",
+          //   contact: "james@berkeley.edu",
+          //   intro:
+          //     "Hello fellow students, gather and hark, For I am James, a spark in the dark. At the heart of the city, or beneath rural ledge, You'll find me immersed in League of Legends. \n\nI'm a gamer, a dreamer, both knight and sage, My arena's the Rift, life's my stage. A Symphony of skills, a crescendo of lights, In the thrill of the battle, I reach new heights.",
+          // }}
         />
-      </div>
+      </div> */}
     </div>
   );
 };
 
-export default RASidebar;
+export default Sidebar;

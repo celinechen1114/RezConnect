@@ -1,7 +1,7 @@
 import Profile from "./Profile";
 import ProfileInfo from "./ProfileInfo";
 
-function ProfileSetting({ profileProps, profileInfoProps }) {
+function ProfileSetting({ profileInfoProps }) {
   return (
     <div
       style={{
@@ -10,17 +10,18 @@ function ProfileSetting({ profileProps, profileInfoProps }) {
         alignItems: "flex-start",
       }}
     >
-      <div
+      {/* <div
         style={{
           width: "50%",
-          margin: "0 auto",
-          marginRight: "15%",
           paddingTop: "20px",
+          float: "none", // reset float
         }}
       >
         <Profile {...profileProps} />
+      </div> */}
+      <div style={{ width: "35%", float: "none" }}>
+        <ProfileInfo {...profileInfoProps} />
       </div>
-      <ProfileInfo {...profileInfoProps} />
     </div>
   );
 }
