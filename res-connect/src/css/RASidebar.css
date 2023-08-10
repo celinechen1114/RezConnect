@@ -13,6 +13,7 @@
     background-color: white; /* adjust as per your preference */
     border-radius: 30px;
     opacity: 1;
+    z-index: 1; /* Set a higher z-index value for the scrollable parent */
   }
 
   /* Title for ResConnect */
@@ -117,8 +118,8 @@
     overflow-y: auto; 
     align-items: center;  
     justify-content: center; 
-
 }
+
 
 .post-item {
     display: flex;

@@ -1,8 +1,9 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./css/RAPanel.css";
 import Profile from "./profile/Profile";
 import profilePic from "./emilie.png";
 import ProfileSetting from "./profile/ProfileSetting";
+
 
 const RAPanel = ({ post, selectedContent, onNewPostSubmit }) => {
   const [title, setTitle] = useState("");
@@ -126,6 +127,25 @@ const RAPanel = ({ post, selectedContent, onNewPostSubmit }) => {
     setSelectedTags([]);
   };
 
+  //added by Celine to make a realtime updating clock showing current time
+  const [currentTime, setCurrentTime] = useState(new Date());
+
+  useEffect(() => {
+    const intervalId = setInterval(() => {
+      setCurrentTime(prevTime => new Date(prevTime.getTime() + 1000)); // Increment by 1000 milliseconds (1 second)
+    }, 1000);
+
+    return () => {
+      clearInterval(intervalId);
+    };
+  }, []);
+
+  const hours = currentTime.getHours().toString().padStart(2, '0');
+  const minutes = currentTime.getMinutes().toString().padStart(2, '0');
+  const seconds = currentTime.getSeconds().toString().padStart(2, '0');
+
+  const timeString = `${hours}:${minutes}:${seconds}`;
+
   if (selectedContent === "profile") {
     return (
       <ProfileSetting
@@ -205,10 +225,12 @@ const RAPanel = ({ post, selectedContent, onNewPostSubmit }) => {
       );
     }
 
+    //This is the main raFeed page! 
     if (!post) {
       return (
         <div className="blank-panel-container">
-          Select a post to view details
+              <h1>{timeString}</h1>
+              <p> Welcome back to  <span className="title"> RezConnect </span> Emilie :) </p>
         </div>
       );
     }
@@ -288,16 +310,16 @@ const RAPanel = ({ post, selectedContent, onNewPostSubmit }) => {
 
         {/* Comment Submission */}
         <div className="comment-section">
-          <form onSubmit={handleCommentSubmit}>
+        <form onSubmit={handleCommentSubmit} className="comment-form">
             <input
-              type="text"
-              value={comment}
-              onChange={handleCommentChange}
-              placeholder="Add a comment..."
-              required
+            type="text"
+            value={comment}
+            onChange={handleCommentChange}
+            placeholder="Add a comment..."
+            required
             />
-            <button type="submit">Add</button>
-          </form>
+            <button className="comment-button" type="submit">Add</button>
+        </form>
         </div>
       </div>
     );

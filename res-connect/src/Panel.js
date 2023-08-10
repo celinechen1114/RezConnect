@@ -136,7 +136,7 @@ const Panel = ({ post, selectedContent, onNewPostSubmit }) => {
 
     if (!post) {
       return (
-        <div className="panel-container">Select a post to view details.</div>
+        <div className="panel-container">Welcome back</div>
       );
     }
 

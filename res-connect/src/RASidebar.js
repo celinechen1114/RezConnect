@@ -49,19 +49,20 @@ const Sidebar = ({ onPostSelect, setSelectedContent, posts }) => {
           ))}
         </ul>
       </div>
-      <h2>Posts</h2>
-      <ul className="posts">
-        {filteredPosts.map((post, index) => (
-          <li
-            className="post-item"
-            key={index}
-            onClick={() => handlePostClick(post)}
-          >
-            <img src={postIcon} alt="Chat Icon" className="post-icon"/>
-            <h3>{post.title}</h3>
-          </li>
-        ))}
-      </ul>
+
+        <h2>Posts</h2>
+        <ul className="posts">
+            {filteredPosts.map((post, index) => (
+            <li
+                className="post-item"
+                key={index}
+                onClick={() => handlePostClick(post)}
+            >
+                <img src={postIcon} alt="Chat Icon" className="post-icon"/>
+                <h3>{post.title}</h3>
+            </li>
+            ))}
+        </ul>
 
       <div
         className="profile-button"
@@ -69,6 +70,7 @@ const Sidebar = ({ onPostSelect, setSelectedContent, posts }) => {
       >
         <Profile name="Emilie" grade="RA" profilePic={profilePic} location="" />
       </div>
+
 
       {/* <div className="profile-button">
         <Profile
