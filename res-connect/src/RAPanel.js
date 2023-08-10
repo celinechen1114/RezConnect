@@ -4,7 +4,6 @@ import Profile from "./profile/Profile";
 import profilePic from "./emilie.png";
 import ProfileSetting from "./profile/ProfileSetting";
 
-
 const RAPanel = ({ post, selectedContent, onNewPostSubmit }) => {
   const [title, setTitle] = useState("");
   const [body, setBody] = useState("");
@@ -20,12 +19,9 @@ const RAPanel = ({ post, selectedContent, onNewPostSubmit }) => {
     "sports",
   ];
 
-  
-
   const [liked, setLiked] = useState(false);
   const [disliked, setDisliked] = useState(false);
   const [starFocused, setStarFocused] = useState(false);
-
 
   const handleChangeTitle = (event) => {
     setTitle(event.target.value);
@@ -58,27 +54,26 @@ const RAPanel = ({ post, selectedContent, onNewPostSubmit }) => {
     }
   };
 
-   const [postLiked, setPostLiked] = useState(false);
-   const [postDisliked, setPostDisliked] = useState(false);
-   const [postStarFocused, setPostStarFocused] = useState(false);
+  const [postLiked, setPostLiked] = useState(false);
+  const [postDisliked, setPostDisliked] = useState(false);
+  const [postStarFocused, setPostStarFocused] = useState(false);
 
   const handlePostThumbsUp = () => {
     post.thumbsUp = (post.thumbsUp || 0) + 1;
     setPostLiked(true);
     setPostDisliked(false);
   };
-  
+
   const handlePostThumbsDown = () => {
     post.thumbsDown = (post.thumbsDown || 0) + 1;
     setPostLiked(false);
     setPostDisliked(true);
   };
-  
+
   const handlePostEndorse = () => {
     post.endorsed = !post.endorsed;
-    setPostStarFocused(prev => !prev);  // toggles the state of starFocused for post
+    setPostStarFocused((prev) => !prev); // toggles the state of starFocused for post
   };
-  
 
   const handleThumbsUp = (cIndex) => {
     const updatedComments = [...post.comments];
@@ -86,7 +81,6 @@ const RAPanel = ({ post, selectedContent, onNewPostSubmit }) => {
     post.comments = updatedComments;
     setLiked(true);
     setDisliked(false);
-
   };
 
   const handleThumbsDown = (cIndex) => {
@@ -95,15 +89,13 @@ const RAPanel = ({ post, selectedContent, onNewPostSubmit }) => {
     post.comments = updatedComments;
     setLiked(false);
     setDisliked(true);
-
   };
 
   const handleEndorse = (cIndex) => {
     const updatedComments = [...post.comments];
     updatedComments[cIndex].endorsed = !updatedComments[cIndex].endorsed;
     post.comments = updatedComments;
-    setStarFocused(prev => !prev);  // toggles the state of starFocused
-
+    setStarFocused((prev) => !prev); // toggles the state of starFocused
   };
 
   const handleTagChange = (event) => {
@@ -132,7 +124,7 @@ const RAPanel = ({ post, selectedContent, onNewPostSubmit }) => {
 
   useEffect(() => {
     const intervalId = setInterval(() => {
-      setCurrentTime(prevTime => new Date(prevTime.getTime() + 1000)); // Increment by 1000 milliseconds (1 second)
+      setCurrentTime((prevTime) => new Date(prevTime.getTime() + 1000)); // Increment by 1000 milliseconds (1 second)
     }, 1000);
 
     return () => {
@@ -140,9 +132,9 @@ const RAPanel = ({ post, selectedContent, onNewPostSubmit }) => {
     };
   }, []);
 
-  const hours = currentTime.getHours().toString().padStart(2, '0');
-  const minutes = currentTime.getMinutes().toString().padStart(2, '0');
-  const seconds = currentTime.getSeconds().toString().padStart(2, '0');
+  const hours = currentTime.getHours().toString().padStart(2, "0");
+  const minutes = currentTime.getMinutes().toString().padStart(2, "0");
+  const seconds = currentTime.getSeconds().toString().padStart(2, "0");
 
   const timeString = `${hours}:${minutes}:${seconds}`;
 
@@ -165,7 +157,8 @@ const RAPanel = ({ post, selectedContent, onNewPostSubmit }) => {
           contact: "emilie@berkeley.edu",
           profilePic: profilePic,
           initialLocation: "Studying at Moffitt until 6",
-          intro: "Hello fellow students, I'm Emilie, RA for Unit 1 Floor 2.", // rest of the data
+          intro:
+            "Hello fellow students, I'm Emilie, RA for Unit 1 Floor 2. Feel free to reach out to me if you have any questions or concerns!", // rest of the data
         }}
       />
     );
@@ -225,12 +218,16 @@ const RAPanel = ({ post, selectedContent, onNewPostSubmit }) => {
       );
     }
 
-    //This is the main raFeed page! 
+    //This is the main raFeed page!
     if (!post) {
       return (
         <div className="blank-panel-container">
-              <h1>{timeString}</h1>
-              <p> Welcome back to  <span className="title"> RezConnect </span> Emilie :) </p>
+          <h1>{timeString}</h1>
+          <p>
+            {" "}
+            Welcome back to <span className="title"> RezConnect </span> Emilie
+            :){" "}
+          </p>
         </div>
       );
     }
@@ -238,19 +235,18 @@ const RAPanel = ({ post, selectedContent, onNewPostSubmit }) => {
     return (
       <div className="panel-container">
         <div className="panel-post-item">
-        <div className="identity-section">
-                {/* <span>Username</span>  Replace with actual username */}
-                {/* Celine's comment: the TIMESTAMP is now moved to the top of the div! */}
-                <span>{new Date(post.timestamp).toLocaleString()}</span>
-            </div>
+          <div className="identity-section">
+            {/* <span>Username</span>  Replace with actual username */}
+            {/* Celine's comment: the TIMESTAMP is now moved to the top of the div! */}
+            <span>{new Date(post.timestamp).toLocaleString()}</span>
+          </div>
 
-            <Profile
+          <Profile
             name="Emilie"
             grade="Resident Advisor"
             profilePic={profilePic}
-            ></Profile>
-            {/* Identity Section */}
-            
+          ></Profile>
+          {/* Identity Section */}
 
           {/* Post Title */}
           <h2 className="post-title">{post.title}</h2>
@@ -260,24 +256,32 @@ const RAPanel = ({ post, selectedContent, onNewPostSubmit }) => {
 
           {/* Post Action Buttons */}
           <div className="post-actions">
-                <button onClick={handlePostThumbsUp} className={postLiked ? 'liked' : ''}>
-                    <i className="material-icons">thumb_up</i>
-                </button>
-                <button onClick={handlePostThumbsDown} className={postDisliked ? 'disliked' : ''}>
-                    <i className="material-icons">thumb_down</i>
-                </button>
-                <button onClick={handlePostEndorse} className={postStarFocused ? 'star-focus' : ''}>
-                    <i className="material-icons">star</i>
-                </button>
-            </div>
+            <button
+              onClick={handlePostThumbsUp}
+              className={postLiked ? "liked" : ""}
+            >
+              <i className="material-icons">thumb_up</i>
+            </button>
+            <button
+              onClick={handlePostThumbsDown}
+              className={postDisliked ? "disliked" : ""}
+            >
+              <i className="material-icons">thumb_down</i>
+            </button>
+            <button
+              onClick={handlePostEndorse}
+              className={postStarFocused ? "star-focus" : ""}
+            >
+              <i className="material-icons">star</i>
+            </button>
+          </div>
         </div>
 
-        
         {/* Comments List */}
-        
+
         <div className="comments-list">
-            <div className="comments-title">Comments</div>
-            {/* <h3 style={{ fontWeight: "bold", textAlign: "left" }}>Comments</h3> */}
+          <div className="comments-title">Comments</div>
+          {/* <h3 style={{ fontWeight: "bold", textAlign: "left" }}>Comments</h3> */}
           {post.comments &&
             post.comments.map((commentObj, cIndex) => (
               <div key={cIndex} className="comment-item">
@@ -287,8 +291,8 @@ const RAPanel = ({ post, selectedContent, onNewPostSubmit }) => {
                   profilePic={profilePic}
                 ></Profile>
                 {/* <div className="comment-user-info"> */}
-                  {/* <span>{commentObj.username}</span> */}
-                  {/* <span>{new Date(commentObj.timestamp).toLocaleString()}</span> */}
+                {/* <span>{commentObj.username}</span> */}
+                {/* <span>{new Date(commentObj.timestamp).toLocaleString()}</span> */}
                 {/* </div> */}
                 <div className="comment-text-box">
                   <p className="comment-text">{commentObj.text}</p>
@@ -310,16 +314,18 @@ const RAPanel = ({ post, selectedContent, onNewPostSubmit }) => {
 
         {/* Comment Submission */}
         <div className="comment-section">
-        <form onSubmit={handleCommentSubmit} className="comment-form">
+          <form onSubmit={handleCommentSubmit} className="comment-form">
             <input
-            type="text"
-            value={comment}
-            onChange={handleCommentChange}
-            placeholder="Add a comment..."
-            required
+              type="text"
+              value={comment}
+              onChange={handleCommentChange}
+              placeholder="Add a comment..."
+              required
             />
-            <button className="comment-button" type="submit">Add</button>
-        </form>
+            <button className="comment-button" type="submit">
+              Add
+            </button>
+          </form>
         </div>
       </div>
     );
