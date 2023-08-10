@@ -229,7 +229,7 @@ return (
                     placeholder="Add a comment..."
                     required
                 />
-                <button type="submit">Add</button>
+                <button type="submit" >Add</button>
             </form>
         </div>
     </div>

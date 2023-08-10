@@ -188,7 +188,7 @@
 
 .tags-list li.active-tag {
     font-weight: bold;
-    border: 2px solid #666; /* Darker border color */
+    border: 2px solid #1B2559; /* Darker border color */
 }
 
 .tags-list li:nth-child(1) {

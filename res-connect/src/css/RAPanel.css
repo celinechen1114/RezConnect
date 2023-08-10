@@ -59,7 +59,7 @@
     border-radius: 10px;
     box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.1);
     font-size: 1em;
-    background-color: #E2E8F0;
+    background-color: #DFE8DE;
     text-align: right; /* Align the timestamp to the right */
 }
 
@@ -77,15 +77,15 @@
 
 .panel-post-item .timestamp {
     font-size: 12px;
-    color: #777;
     margin-top: 10px;
 }
 
 .identity-section{
     font-size: 14px;
-    color:#666; 
-    font-family: Comic Sans M;
-    font-weight: bold;
+    color:#1B2559; 
+    font-family: sans-serif;
+    font-weight: 500;
+    
 }
 
 
@@ -97,6 +97,10 @@
 
 }
 
+.comment-section {
+    display: flex;
+    align-items: center;
+  }
 .comment-section p {
     background-color: #f1f1f1;
     border-radius: 5px;
@@ -167,7 +171,7 @@
 .tag-selection input[type="checkbox"]:checked + label {
     color: black;
     font-weight: bold;
-    border: 2px solid #666; /* Darker border color */
+    border: 2px solid #1B2559; /* Darker border color */
 }
 
 .submit-btn {
@@ -410,6 +414,8 @@
 .comment-actions button:hover .material-icons  {
     color: #1F6F12;
  }
+
+
 
 
 .comment-actions button:active {
