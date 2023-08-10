@@ -12,9 +12,10 @@
     overflow: auto; /* adds a scrollbar if content exceeds sidebar height */
     background-color: white; /* adjust as per your preference */
     border-radius: 30px;
-    opacity: 0.8;
+    opacity: 1;
   }
 
+  /* Title for ResConnect */
   .title {
     font-size: 20px;
     text-shadow: none;
@@ -121,7 +122,7 @@
 
 .post-item {
     display: flex;
-    justify-content: center;
+    justify-content: left;
     align-items: center;
     border-radius: 10px;
     padding: 10px;  
@@ -145,6 +146,11 @@
 .post-item:active {
     transform: scale(0.95);
     box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.15), 0 3px 10px 0 rgba(0, 0, 0, 0.12);
+}
+
+.post-icon {
+  width: 30px; /* Set your desired width */
+  padding-right: 10px; /* Add your desired padding value */
 }
 
 .tag-filter {
@@ -182,6 +188,7 @@
 
 .tags-list li.active-tag {
     font-weight: bold;
+    border: 2px solid #1B2559; /* Darker border color */
 }
 
 .tags-list li:nth-child(1) {

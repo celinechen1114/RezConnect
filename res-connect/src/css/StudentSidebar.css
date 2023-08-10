@@ -12,7 +12,7 @@
     overflow: auto; /* adds a scrollbar if content exceeds sidebar height */
     background-color: white; /* adjust as per your preference */
     border-radius: 30px;
-    opacity: 0.8;
+    opacity: 1;
   }
 
   .student-title {

@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import "./css/RASidebar.css";
 import Profile from "./profile/Profile";
 import profilePic from "./emilie.png";
+import postIcon from "./chat.png";
 
 const Sidebar = ({ onPostSelect, setSelectedContent, posts }) => {
   const [activeTag, setActiveTag] = useState("all"); // Track the currently selected tag
@@ -56,6 +57,7 @@ const Sidebar = ({ onPostSelect, setSelectedContent, posts }) => {
             key={index}
             onClick={() => handlePostClick(post)}
           >
+            <img src={postIcon} alt="Chat Icon" className="post-icon"/>
             <h3>{post.title}</h3>
           </li>
         ))}
