@@ -143,14 +143,14 @@ const RAPanel = ({ post, selectedContent, onNewPostSubmit }) => {
       <ProfileSetting
         profileProps={{
           name: "Emilie",
-          grade: "RA",
+          grade: "Resident Advisor",
           profilePic: profilePic,
           initialLocation: "Studying at Moffitt until 6",
         }}
         profileInfoProps={{
           name: "Emilie",
           major: "Biology",
-          role: "RA",
+          role: "Resident Advisor",
           year: "Senior",
           interests: ["Surfing"],
           clubs: ["Sufing Club", "Soccer Club"],

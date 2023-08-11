@@ -70,7 +70,12 @@ const Sidebar = ({ onPostSelect, setSelectedContent, posts }) => {
         className="profile-button"
         onClick={() => setSelectedContent("profile")}
       >
-        <Profile name="Emilie" grade="RA" profilePic={profilePic} location="" />
+        <Profile
+          name="Emilie"
+          grade="Resident Advisor"
+          profilePic={profilePic}
+          location=""
+        />
       </div>
 
       {/* <div className="profile-button">
