@@ -337,7 +337,7 @@ body {
     border-top: 0px solid #e0e0e0;
     padding-top: 15px;
     margin-top: 20px;
-    position: relative;
+    position: absolute;
     bottom: 3%;        
     width: 80%;         
     left: 10%;          
@@ -345,6 +345,9 @@ body {
     justify-content: center; 
     align-items: center; 
     padding: 20px 0;
+    overflow: visible;
+    box-sizing: border-box;
+
 
 }
 
@@ -389,12 +392,12 @@ body {
 
 .comments-list {
     flex: 1;
-    overflow-y: auto;
     display: flex;
     flex-direction: column;
     align-items: center;
     max-height: calc(100% - 10%); 
-    overflow-x: hidden
+    overflow-x: hidden;
+    overflow-y: auto;
     /* overflow-y: auto;  */
 }
 

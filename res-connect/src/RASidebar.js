@@ -4,7 +4,7 @@ import Profile from "./profile/Profile";
 import profilePic from "./emilie.png";
 import postIcon from "./chat.png";
 
-const Sidebar = ({ onPostSelect, setSelectedContent, posts }) => {
+const RASidebar = ({ onPostSelect, setSelectedContent, posts }) => {
   const [activeTag, setActiveTag] = useState("all"); // Track the currently selected tag
 
   const tags = [
@@ -101,4 +101,4 @@ const Sidebar = ({ onPostSelect, setSelectedContent, posts }) => {
   );
 };
 
-export default Sidebar;
+export default RASidebar;
