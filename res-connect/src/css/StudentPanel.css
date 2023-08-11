@@ -106,14 +106,15 @@ body {
     
 }
 
-
 .comment-section {
     border-top: 1px solid #e0e0e0;
     padding-top: 15px;
     margin-top: 20px;
-    height: 5%;
-
+    position: absolute;
+    overflow: visible;  /* This ensures that the container doesn't hide overflowing content */
+    box-sizing: border-box;
 }
+
 
 /* .comment-section {
     display: flex;
@@ -389,13 +390,12 @@ body {
 
 .comments-list {
     flex: 1;
-    overflow-y: auto;
     display: flex;
     flex-direction: column;
     align-items: center;
     max-height: calc(100% - 10%); 
-    overflow-x: hidden
-    /* overflow-y: auto;  */
+    overflow-x: hidden;
+    overflow-y: auto; 
 }
 
 .comments-title {
@@ -550,6 +550,7 @@ body {
 
 
 .scrollable-panel-content {
+    flex: 1;
     max-height: 100vh;  /* This ensures the container will not exceed the viewport height */
     overflow-y: auto;  /* This enables vertical scrolling when content exceeds the container height */
     padding: 1rem;    /* Add some padding if you wish */

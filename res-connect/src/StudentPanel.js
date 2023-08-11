@@ -18,7 +18,6 @@ const StudentPanel = ({ post, selectedContent, onNewPostSubmit }) => {
     "social",
     "sports",
   ];
-  
 
   const handleChangeTitle = (event) => {
     setTitle(event.target.value);
@@ -85,121 +84,119 @@ const StudentPanel = ({ post, selectedContent, onNewPostSubmit }) => {
   const handleThumbsUp = (cIndex) => {
     const updatedComments = [...post.comments];
     if (commentStatus[cIndex] && commentStatus[cIndex].liked) {
-        updatedComments[cIndex].thumbsUp--;
+      updatedComments[cIndex].thumbsUp--;
     } else {
-        updatedComments[cIndex].thumbsUp++;
+      updatedComments[cIndex].thumbsUp++;
     }
     post.comments = updatedComments;
 
-    setCommentStatus(prevStatus => ({
-        ...prevStatus,
-        [cIndex]: {
-            ...prevStatus[cIndex],
-            liked: !prevStatus[cIndex]?.liked,
-            disliked: false
-        }
+    setCommentStatus((prevStatus) => ({
+      ...prevStatus,
+      [cIndex]: {
+        ...prevStatus[cIndex],
+        liked: !prevStatus[cIndex]?.liked,
+        disliked: false,
+      },
     }));
-};
+  };
 
-const handleThumbsDown = (cIndex) => {
+  const handleThumbsDown = (cIndex) => {
     const updatedComments = [...post.comments];
     if (commentStatus[cIndex] && commentStatus[cIndex].disliked) {
-        updatedComments[cIndex].thumbsDown--;
+      updatedComments[cIndex].thumbsDown--;
     } else {
-        updatedComments[cIndex].thumbsDown++;
+      updatedComments[cIndex].thumbsDown++;
     }
     post.comments = updatedComments;
 
-    setCommentStatus(prevStatus => ({
-        ...prevStatus,
-        [cIndex]: {
-            ...prevStatus[cIndex],
-            disliked: !prevStatus[cIndex]?.disliked,
-            liked: false
-        }
+    setCommentStatus((prevStatus) => ({
+      ...prevStatus,
+      [cIndex]: {
+        ...prevStatus[cIndex],
+        disliked: !prevStatus[cIndex]?.disliked,
+        liked: false,
+      },
     }));
-};
+  };
 
-const handleEndorse = (cIndex) => {
+  const handleEndorse = (cIndex) => {
     const updatedComments = [...post.comments];
     updatedComments[cIndex].endorsed = !updatedComments[cIndex].endorsed;
     post.comments = updatedComments;
 
-    setCommentStatus(prevStatus => ({
-        ...prevStatus,
-        [cIndex]: {
-            ...prevStatus[cIndex],
-            starFocused: !prevStatus[cIndex]?.starFocused
-        }
+    setCommentStatus((prevStatus) => ({
+      ...prevStatus,
+      [cIndex]: {
+        ...prevStatus[cIndex],
+        starFocused: !prevStatus[cIndex]?.starFocused,
+      },
     }));
-};
+  };
 
-const [commentStatus, setCommentStatus] = useState({});
+  const [commentStatus, setCommentStatus] = useState({});
 
-const handleCommentThumbsUp = (cIndex) => {
+  const handleCommentThumbsUp = (cIndex) => {
     const updatedComments = [...post.comments];
     if (commentStatus[cIndex] && commentStatus[cIndex].liked) {
-        updatedComments[cIndex].thumbsUp--;
-        setCommentStatus(prevStatus => ({
-            ...prevStatus,
-            [cIndex]: {
-                ...prevStatus[cIndex],
-                liked: false
-            }
-        }));
+      updatedComments[cIndex].thumbsUp--;
+      setCommentStatus((prevStatus) => ({
+        ...prevStatus,
+        [cIndex]: {
+          ...prevStatus[cIndex],
+          liked: false,
+        },
+      }));
     } else {
-        updatedComments[cIndex].thumbsUp++;
-        setCommentStatus(prevStatus => ({
-            ...prevStatus,
-            [cIndex]: {
-                ...prevStatus[cIndex],
-                liked: true,
-                disliked: false
-            }
-        }));
+      updatedComments[cIndex].thumbsUp++;
+      setCommentStatus((prevStatus) => ({
+        ...prevStatus,
+        [cIndex]: {
+          ...prevStatus[cIndex],
+          liked: true,
+          disliked: false,
+        },
+      }));
     }
     post.comments = updatedComments;
-};
+  };
 
-const handleCommentThumbsDown = (cIndex) => {
+  const handleCommentThumbsDown = (cIndex) => {
     const updatedComments = [...post.comments];
     if (commentStatus[cIndex] && commentStatus[cIndex].disliked) {
-        updatedComments[cIndex].thumbsDown--;
-        setCommentStatus(prevStatus => ({
-            ...prevStatus,
-            [cIndex]: {
-                ...prevStatus[cIndex],
-                disliked: false
-            }
-        }));
+      updatedComments[cIndex].thumbsDown--;
+      setCommentStatus((prevStatus) => ({
+        ...prevStatus,
+        [cIndex]: {
+          ...prevStatus[cIndex],
+          disliked: false,
+        },
+      }));
     } else {
-        updatedComments[cIndex].thumbsDown++;
-        setCommentStatus(prevStatus => ({
-            ...prevStatus,
-            [cIndex]: {
-                ...prevStatus[cIndex],
-                disliked: true,
-                liked: false
-            }
-        }));
+      updatedComments[cIndex].thumbsDown++;
+      setCommentStatus((prevStatus) => ({
+        ...prevStatus,
+        [cIndex]: {
+          ...prevStatus[cIndex],
+          disliked: true,
+          liked: false,
+        },
+      }));
     }
     post.comments = updatedComments;
-};
+  };
 
-const handleCommentEndorse = (cIndex) => {
+  const handleCommentEndorse = (cIndex) => {
     const updatedComments = [...post.comments];
     updatedComments[cIndex].endorsed = !updatedComments[cIndex].endorsed;
     post.comments = updatedComments;
-    setCommentStatus(prevStatus => ({
-        ...prevStatus,
-        [cIndex]: {
-            ...prevStatus[cIndex],
-            starFocused: !prevStatus[cIndex]?.starFocused
-        }
+    setCommentStatus((prevStatus) => ({
+      ...prevStatus,
+      [cIndex]: {
+        ...prevStatus[cIndex],
+        starFocused: !prevStatus[cIndex]?.starFocused,
+      },
     }));
-};
-
-
+  };
 
   const handleTagChange = (event) => {
     if (event.target.checked) {
@@ -262,7 +259,7 @@ const handleCommentEndorse = (cIndex) => {
           profilePic: profilePic,
           initialLocation: "Studying at Doe until 5",
           intro:
-            "Hey guys, this is James from Unit 2. Let's explore the campus together!"
+            "Hey guys, this is James from Unit 2. Let's explore the campus together!",
         }}
       />
     );
@@ -330,8 +327,7 @@ const handleCommentEndorse = (cIndex) => {
           <h1>{timeString}</h1>
           <p>
             {" "}
-            Welcome back to <span className="title"> RezConnect </span> James
-            :){" "}
+            Welcome back to <span className="title"> RezConnect </span> James :){" "}
           </p>
         </div>
       );
@@ -377,50 +373,52 @@ const handleCommentEndorse = (cIndex) => {
                 <span>{postDisliked ? "Disliked" : ""}</span>
               </button>
             </div>
-
           </div>
 
           {/* Comments List */}
 
           <div className="comments-list">
             <div className="comments-title">Comments</div>
-              {post.comments &&
-                post.comments.map((commentObj, cIndex) => (
-                  <div key={cIndex} className="comment-item">
-                    <span className="comment-timestamp">{new Date(commentObj.timestamp).toLocaleString()}</span>
-                    <Profile
-                      name="James"
-                      grade="Freshman"
-                      profilePic={profilePic}
-                    ></Profile>
-                    <div className="comment-text-box">
-                      <p className="comment-text">{commentObj.text}</p>
-                    </div>
-                    <div className="comment-actions">
+            {post.comments &&
+              post.comments.map((commentObj, cIndex) => (
+                <div key={cIndex} className="comment-item">
+                  <span className="comment-timestamp">
+                    {new Date(commentObj.timestamp).toLocaleString()}
+                  </span>
+                  <Profile
+                    name="James"
+                    grade="Freshman"
+                    profilePic={profilePic}
+                  ></Profile>
+                  <div className="comment-text-box">
+                    <p className="comment-text">{commentObj.text}</p>
+                  </div>
+                  <div className="comment-actions">
                     <button
-                        onClick={() => handleCommentThumbsUp(cIndex)}
-                        className={commentStatus[cIndex]?.liked ? "liked" : ""}
+                      onClick={() => handleCommentThumbsUp(cIndex)}
+                      className={commentStatus[cIndex]?.liked ? "liked" : ""}
                     >
-                        <i className="material-icons">thumb_up</i>
-                        <span>{commentStatus[cIndex]?.liked ? "Liked!" : ""}</span>
-
+                      <i className="material-icons">thumb_up</i>
+                      <span>
+                        {commentStatus[cIndex]?.liked ? "Liked!" : ""}
+                      </span>
                     </button>
                     <button
-                        onClick={() => handleCommentThumbsDown(cIndex)}
-                        className={commentStatus[cIndex]?.disliked ? "disliked" : ""}
+                      onClick={() => handleCommentThumbsDown(cIndex)}
+                      className={
+                        commentStatus[cIndex]?.disliked ? "disliked" : ""
+                      }
                     >
-                        <i className="material-icons">thumb_down</i>
-                        <span>{commentStatus[cIndex]?.disliked ? "Disliked" : ""}</span>
+                      <i className="material-icons">thumb_down</i>
+                      <span>
+                        {commentStatus[cIndex]?.disliked ? "Disliked" : ""}
+                      </span>
                     </button>
-                    
-              </div>
+                  </div>
+                </div>
+              ))}
           </div>
-          
-          ))}
-
         </div>
-        </div>
-      
 
         {/* Comment Submission */}
         <div className="comment-section">
