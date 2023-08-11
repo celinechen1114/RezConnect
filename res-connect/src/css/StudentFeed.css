@@ -1,0 +1,5 @@
+.feed-container {
+    display: flex;
+    align-items: start;
+    height: 100vh;
+}

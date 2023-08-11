@@ -1,214 +1,226 @@
-.student-sidebar {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
-    width: 250px; /* adjust width as per your preference */
-    height: calc(100vh - 40px); /* subtracts 10px from top and 50px from bottom */
-    padding: 10px;
-    position: relative; /* Change from 'fixed' to 'relative' */
-    left: 30px; 
-    top: 10px; /* creates a 10px gap from the top of the screen */
-    overflow: auto; /* adds a scrollbar if content exceeds sidebar height */
-    background-color: white; /* adjust as per your preference */
-    border-radius: 30px;
-    opacity: 1;
-  }
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  width: 250px; /* adjust width as per your preference */
+  height: calc(100vh - 40px); /* subtracts 10px from top and 50px from bottom */
+  padding: 10px;
+  position: relative; /* Change from 'fixed' to 'relative' */
+  left: 30px; 
+  top: 10px; /* creates a 10px gap from the top of the screen */
+  overflow: auto; /* adds a scrollbar if content exceeds sidebar height */
+  background-color: white; /* adjust as per your preference */
+  border-radius: 30px;
+  opacity: 1;
+  z-index: 1; /* Set a higher z-index value for the scrollable parent */
+}
 
-  .student-title {
-    font-size: 20px;
-    text-shadow: none;
-    color: #000;
-    margin-top: 10px;
-    margin-bottom: 20px;
-  }
-  
-  .student-new-post-button {
-    display: flex;
-    height: 50px;
-    width: calc(100% - 20px);
-    align-items: center;
-    justify-content: center;
-    border-radius: 5px;
-    overflow: hidden;
-    border-bottom: 1px solid #e0e0e0;
+/* Title for ResConnect */
+.title {
+  font-size: 20px;
+  text-shadow: none;
+  color: #000;
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
 
-  }
-  
-  .student-new-post-button button {
-    /* border-bottom: 1px solid #e0e0e0; */
-    border-radius: 10px;
-    padding: 20px;
-    font-size: 18px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 10px;
-    background-color: #430453;
-    color:white;
-    border: none;
-    flex: 1;
-    transition: background-color 0.3s ease;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+.new-post-button {
+  display: flex;
+  height: 50px;
+  width: calc(100% - 20px);
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px;
+  overflow: hidden;
+  border-bottom: 1px solid #e0e0e0;
+  border-radius: 200px;
 
-  }
-
-  .student-new-post-button button:hover {
-    background-color: #78b26f;
-  }
-
-  .student-new-post-button button:active {
-    transform: scale(0.95);
-    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.15), 0 3px 10px 0 rgba(0, 0, 0, 0.12);
-
-  }
-
-  .student-profile-button {
-    display: flex;
-    width: calc(100% - 20px);
-    justify-content: space-between;
-    border-radius: 30px;
-    overflow: hidden;
-    position: absolute; /* Sets the position to absolute */
-    bottom: 3%; /* Positions the button at the bottom 15% of the sidebar */
-    left: 50%;  /* These two properties will center the button */
-    transform: translateX(-50%); /* This is to perfectly center the button regardless of its width */
-
-  }
-
-  .student-profile-button button {
-    padding: 20px;
-    font-size: 18px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 10px;
-    background-color: #2c1a91;
-    color:white;
-    border: 2px;
-    flex: 1;
-    transition: background-color 0.3s ease;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-
-  }
-
-  .student-new-post-button button:hover {
-    background-color: rgba(155, 92, 153, 0.56);
-  }
-
-  .student-new-post-button button:active {
-    transform: scale(0.95);
-    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.15), 0 3px 10px 0 rgba(0, 0, 0, 0.12);
-
-  }
-
-  .student-posts {
-    /* border-top: 1px solid #e0e0e0; */
-    margin-top: 15px;
-    width: 100%; /* takes up the remaining width of the sidebar */
-    display: flex;
-    flex-direction: column;
-    gap: 10px; /* creates a gap between posts */
-    max-height: calc(97% - 60px); /* Assuming profile button's height (with padding) is around 60px */
-    overflow-y: auto; /* Makes it scrollable vertically */
 
 }
 
-.student-post-item {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 100px;
-    padding: 10px;  /* reduced padding for a smaller appearance */
-    /* font-size: 16px;  reduced font size */
-    background-color: #C3E2BE;
-    color: black;
-    border: none;
-    width: calc(100% - 20px);  /* this should match the width of .new-post-button */
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    text-align: center;  /* to center the text */
-    font-size: 1em;
-    font-weight: bold;
+.new-post-button button {
+  /* border-bottom: 1px solid #e0e0e0; */
+  border-radius: 10px;
+  padding: 20px;
+  font-weight: bold;
+  font-size: 1em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  background-color: #1F6F12;
+  color:white;
+  border: none;
+  flex: 1;
+  transition: background-color 0.3s ease;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 
 }
 
-.student-post-item:hover {
-    background-color: rgba(155, 92, 153, 0.56);
+.new-post-button button:hover {
+  background-color: #78b26f;
 }
 
-.student-post-item:active {
-    transform: scale(0.95);
-    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.15), 0 3px 10px 0 rgba(0, 0, 0, 0.12);
+.new-post-button button:active {
+  transform: scale(0.95);
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.15), 0 3px 10px 0 rgba(0, 0, 0, 0.12);
+
 }
 
-.student-tag-filter {
-    margin-top: 20px; /* Adjust this value as needed */
+.profile-button {
+  display: flex;
+  width: calc(90%);
+  justify-content: space-between;
+  border-radius: 10px;
+  overflow: hidden;
+  position: absolute;
+  bottom: 3%; 
+  left: 50%;  
+  background-color: transparent;
+  transform: translateX(-50%); 
+
 }
 
-  
-/* General styles for tags */
-.student-tags-list {
-    /* border-top: 1px solid #e0e0e0; */
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-    margin-top: 15px;
-    justify-content: center;  /* Center the tags horizontally */
-    margin-bottom: 20px;
-    border-bottom: 1px solid #e0e0e0;
+.profile-button button {
+  padding: 20px;
+  font-size: 18px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  background-color: #2c1a91;
+  color:white;
+  border: 2px;
+  flex: 1;
+  transition: background-color 0.3s ease;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
 }
 
-.student-tags-list li {
-    margin-top: 5px;
-    list-style-type: none;
-    padding: 5px 10px;
-    border-radius: 15px;
-    cursor: pointer;
-    text-align: center;
-    font-size: 14px; 
-    transition: transform 0.3s;
-    margin-bottom: 5px;
+.new-post-button button:hover {
+  background-color: rgba(49, 136, 89, 0.56);
 }
 
-.student-tags-list li:hover {
-    transform: scale(1.05);
+.new-post-button button:active {
+  transform: scale(0.95);
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.15), 0 3px 10px 0 rgba(0, 0, 0, 0.12);
+
 }
 
-.student-tags-list li.active-tag {
-    font-weight: bold;
+.posts {
+  /* border-top: 1px solid #e0e0e0;; */
+  margin-top: 15px;
+  width: 100%; 
+  display: flex;
+  flex-direction: column;
+  gap: 10px; 
+  max-height: calc(97% - 60px); 
+  overflow-y: auto; 
+  align-items: center;  
+  justify-content: center; 
 }
 
-/* Individual colors for each tag */
-.student-tags-list li:nth-child(1) {
-    background-color: #ffadad;
+
+.post-item {
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  border-radius: 10px;
+  padding: 10px;  
+  background-color: white;
+  color: black;
+  border: none;
+  width: calc(100% - 20px); 
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  text-align: left;  
+  font-size: 1em;
+  box-shadow: 10px #000;
+  /* font-weight: bold; */
+
+}
+
+.post-item:hover {
+  background-color: rgba(49, 136, 89, 0.56);
+}
+
+.post-item:active {
+  transform: scale(0.95);
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.15), 0 3px 10px 0 rgba(0, 0, 0, 0.12);
+}
+
+.post-icon {
+width: 30px; /* Set your desired width */
+padding-right: 10px; /* Add your desired padding value */
+}
+
+.tag-filter {
+  margin-top: 20px; 
+  /* border-bottom: 1px solid #e0e0e0; */
+
+}
+
+
+.tags-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 15px;
+  justify-content: center; 
+  margin-bottom: 20px;
+  /* border-bottom: 1px solid #e0e0e0; */
+}
+
+.tags-list li {
+  margin-top: 5px;
+  list-style-type: none;
+  padding: 5px 10px;
+  border-radius: 15px;
+  cursor: pointer;
+  text-align: center;
+  font-size: 14px; 
+  transition: transform 0.3s;
+  margin-bottom: 5px;
+}
+
+.tags-list li:hover {
+  transform: scale(1.05);
+}
+
+.tags-list li.active-tag {
+  font-weight: bold;
+  border: 2px solid #1B2559; /* Darker border color */
+}
+
+.tags-list li:nth-child(1) {
+  background-color: #ffadad;
 }
 
 .tags-list li:nth-child(2) {
-    background-color: #ffd6a5;
+  background-color: #ffd6a5;
 }
 
-.student-tags-list li:nth-child(3) {
-    background-color: #fdffb6;
+.tags-list li:nth-child(3) {
+  background-color: #fdffb6;
 }
 
-.student-tags-list li:nth-child(4) {
-    background-color: #caffbf;
+.tags-list li:nth-child(4) {
+  background-color: #caffbf;
 }
 
-.student-tags-list li:nth-child(5) {
-    background-color: #9bf6ff;
+.tags-list li:nth-child(5) {
+  background-color: #9bf6ff;
 }
 
-.student-tags-list li:nth-child(6) {
-    background-color: #a0c4ff;
+.tags-list li:nth-child(6) {
+  background-color: #a0c4ff;
 }
 
-.student-tags-list li:nth-child(7) {
-    background-color: #bdb2ff;
+.tags-list li:nth-child(7) {
+  background-color: #bdb2ff;
 }
 
-.student-tags-list li:nth-child(8) {
-    background-color: #ffc6ff;
+.tags-list li:nth-child(8) {
+  background-color: #ffc6ff;
 }

@@ -1,3 +1,9 @@
+body {
+    background-image: url('ra_view_background.svg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
 .blank-panel-container {
     display: flex;
     flex-direction: column; /* Stack elements vertically */
@@ -29,10 +35,6 @@
     font-weight:bolder;
   }
   
-
-
-
-
 
 .panel-container {
     display: flex;
@@ -274,12 +276,11 @@
 }
 
 .panel-post-body {
-    height: 200px; 
+    height: 150px; 
     width: 100%; 
     text-align: left;
     overflow-wrap: break-word; 
 }
-
 .post-actions {
     display: flex;
     gap: 10px; 
@@ -288,9 +289,7 @@
     padding: 10px 15px;
 }
 
-
 .post-actions button {
-    width: 30px;
     height: 50px;
     display: flex; 
     gap: 10px;
@@ -300,8 +299,12 @@
     border-radius: 10px;
     margin: 8px auto; 
     padding: 10px 15px;
+    flex-direction: row;   /* Ensure content flows horizontally */
 }
 
+.post-actions button i.material-icons {
+    margin-right: 5px;  /* Optional: to give some spacing between icon and text */
+}
 
 .post-actions .material-icons {
     font-size: 20px; 
@@ -312,6 +315,22 @@
 .post-actions button:hover .material-icons  {
     color: gold;
  }
+
+
+.post-actions button.liked .material-icons,
+.post-actions button.disliked .material-icons {
+    color: gold;
+}
+
+.post-actions button.star-focus .material-icons {
+    color: gold;
+}
+
+/* Endorse button styling */
+.endorse-button {
+    background-color: #007BFF; 
+    color: white; 
+}
 
 
 .comment-section {
@@ -365,19 +384,7 @@
 }
 
 .comment-section button:hover {
-    background-color: rgba(155, 92, 153, 0.56);
-}
-
-
-.endorse-btn {
-    background-color: transparent;
-    border: none;
-    cursor: pointer;
-    color: gray;
-}
-
-.endorse-btn.endorsed {
-    color: gold;
+    background-color: #619959;
 }
 
 .comments-list {
@@ -387,7 +394,8 @@
     flex-direction: column;
     align-items: center;
     max-height: calc(100% - 10%); 
-    overflow-y: auto; 
+    overflow-x: hidden
+    /* overflow-y: auto;  */
 }
 
 .comments-title {
@@ -418,7 +426,7 @@
     padding: 10px;
     background-color: #fff;
     border-radius: 5px;
-    margin-top: 5px;
+    margin-top: 10px;
     text-align: left;
     overflow: visible; 
     margin-bottom: 10px;
@@ -431,12 +439,11 @@
     display: flex; 
     gap: 10px;
     justify-content: flex-end;
-    margin-top: 10px; 
+    margin-bottom: 15px;
 }
 
 
 .comment-actions button {
-    width: 10px;
     height: 50px;
     display: flex; 
     gap: 10px;
@@ -444,6 +451,9 @@
     align-items: center;
     margin-top: 10px; 
     border-radius: 10px;
+    margin: 8px auto; 
+    padding: 10px 15px;
+    flex-direction: row;   /* Ensure content flows horizontally */
 }
 
 .comment-actions button:hover .material-icons  {
@@ -451,14 +461,33 @@
  }
 
 
+ .comment-actions button.liked .material-icons,
+.comment-actions button.disliked .material-icons {
+    color: gold;
+}
+
+.comment-actions button.star-focus .material-icons {
+    color: gold;
+}
+
+.comment-actions button i.material-icons {
+    margin-right: 5px;  /* Optional: to give some spacing between icon and text */
+}
+
+.comment-actions .material-icons {
+    font-size: 20px; 
+    color: rgb(204, 204, 204);
+}
+
+
 .comment-actions button:active {
     transform: scale(0.95);
     box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.15), 0 3px 10px 0 rgba(0, 0, 0, 0.12);
 }
 
-/* When button retains focus after being clicked, the icon stays gold */
-.comment-actions button:focus .material-icons {
-    color: gold;
+.comment-endorse-button {
+    background-color: #007BFF; 
+    color: white; 
 }
 
 .comment-user-info {
@@ -479,6 +508,15 @@
     font-weight: bold;
 
 }
+
+.comment-timestamp {
+    text-align: right;
+    font-size: 12px;
+    /* margin-top: 10px; */
+    /* font-weight: bold; */
+
+}
+
 
 .comment-actions .material-icons {
     font-size: 20px; 
@@ -509,21 +547,10 @@
     border-radius: 4px;
     cursor: pointer;
 }
-/* 
-.comment-actions button.liked .material-icons,
-.comment-actions button.disliked .material-icons {
-    color: gold;
-}
 
-.comment-actions button.star-focus .material-icons {
-    color: gold; */
-/* } */
 
-.post-actions button.liked .material-icons,
-.post-actions button.disliked .material-icons {
-    color: gold;
-}
-
-.post-actions button.star-focus .material-icons {
-    color: gold;
+.scrollable-panel-content {
+    max-height: 100vh;  /* This ensures the container will not exceed the viewport height */
+    overflow-y: auto;  /* This enables vertical scrolling when content exceeds the container height */
+    padding: 1rem;    /* Add some padding if you wish */
 }

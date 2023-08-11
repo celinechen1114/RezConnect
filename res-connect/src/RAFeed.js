@@ -16,9 +16,10 @@ const RAFeed = () => {
   const onNewPostSubmit = (newPost) => {
     // Attach a timestamp to the new post
     const timestamp = new Date().toISOString(); // Capture current date-time as an ISO string
-    const postWithTimestamp = { ...newPost, timestamp };
+    const postWithTimestamp = { ...newPost, timestamp, comments: []};
 
     setPosts([postWithTimestamp, ...posts]);
+    console.log(posts[0]);
     setSelectedPost(null); // Reset selected post to show the 'new post' form again (or set to the new post to show its details)
   };
 
