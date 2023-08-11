@@ -326,7 +326,7 @@ const handleCommentEndorse = (cIndex) => {
     //This is the main raFeed page!
     if (!post) {
       return (
-        <div className="blank-panel-container">
+        <div className="student-blank-panel-container">
           <h1>{timeString}</h1>
           <p>
             {" "}
@@ -338,7 +338,7 @@ const handleCommentEndorse = (cIndex) => {
     }
 
     return (
-      <div className="panel-container">
+      <div className="student-panel-container">
         <div className="scrollable-panel-content">
           <div className="panel-post-item">
             <div className="identity-section">
@@ -348,8 +348,8 @@ const handleCommentEndorse = (cIndex) => {
             </div>
 
             <Profile
-              name="Emilie"
-              grade="Resident Advisor"
+              name="James"
+              grade="Freshman"
               profilePic={profilePic}
             ></Profile>
             {/* Identity Section */}
@@ -376,13 +376,6 @@ const handleCommentEndorse = (cIndex) => {
                 <i className="material-icons">thumb_down</i>
                 <span>{postDisliked ? "Disliked" : ""}</span>
               </button>
-              <button
-                onClick={handlePostEndorse}
-                className={postStarFocused ? "endorse-button star-focus" : "action-button endorse-button"}
-              >
-                <i className="material-icons">verified</i>
-                <span>{postStarFocused ? "Endorsed!" : "Endorse"}</span>
-              </button>
             </div>
 
           </div>
@@ -396,8 +389,8 @@ const handleCommentEndorse = (cIndex) => {
                   <div key={cIndex} className="comment-item">
                     <span className="comment-timestamp">{new Date(commentObj.timestamp).toLocaleString()}</span>
                     <Profile
-                      name="Emilie"
-                      grade="Resident Advisor"
+                      name="James"
+                      grade="Freshman"
                       profilePic={profilePic}
                     ></Profile>
                     <div className="comment-text-box">
@@ -419,14 +412,7 @@ const handleCommentEndorse = (cIndex) => {
                         <i className="material-icons">thumb_down</i>
                         <span>{commentStatus[cIndex]?.disliked ? "Disliked" : ""}</span>
                     </button>
-                    <button
-                        onClick={() => handleCommentEndorse(cIndex)}
-                        className={commentStatus[cIndex]?.starFocused ? "comment-endorse-button star-focus" : "action-button endorse-button"}
-                        
-                    >
-                        <i className="material-icons">verified</i>
-                        <span>{commentStatus[cIndex]?.starFocused ? "Endorsed!" : "Endorse"}</span>
-                    </button>
+                    
               </div>
           </div>
           

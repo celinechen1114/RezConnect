@@ -4,7 +4,7 @@ body {
     background-size: cover;
 }
 
-.blank-panel-container {
+.student-blank-panel-container {
     display: flex;
     flex-direction: column; /* Stack elements vertically */
     margin-left: 310px;
@@ -25,18 +25,18 @@ body {
   }
   
   /* This is the clock time */
-  .blank-panel-container h1 {
+  .student-blank-panel-container h1 {
     font-size: 75px; 
     color:black
   }
   
-  .blank-panel-container p {
+  .student-blank-panel-container p {
     font-size: 20px; 
     font-weight:bolder;
   }
   
 
-.panel-container {
+.student-panel-container {
     display: flex;
     flex-direction: column;
 
@@ -54,7 +54,7 @@ body {
     top: 10px;
 }
 
-.new-post-title {
+.student-new-post-title {
     display: block;
     width: 80%;
     text-align: left; 
