@@ -150,6 +150,7 @@ const RAPanel = ({ post, selectedContent, onNewPostSubmit }) => {
         profileInfoProps={{
           name: "Emilie",
           major: "Biology",
+          role: "RA",
           year: "Senior",
           interests: ["Surfing"],
           clubs: ["Sufing Club", "Soccer Club"],
@@ -158,7 +159,7 @@ const RAPanel = ({ post, selectedContent, onNewPostSubmit }) => {
           profilePic: profilePic,
           initialLocation: "Studying at Moffitt until 6",
           intro:
-            "Hello fellow students, I'm Emilie, RA for Unit 1 Floor 2. Feel free to reach out to me if you have any questions or concerns!", // rest of the data
+            "Hello fellow students, I'm Emilie, RA for Unit 1 Floor 2. Feel free to reach out to me if you have any questions or concerns", // rest of the data
         }}
       />
     );
@@ -204,6 +205,7 @@ const RAPanel = ({ post, selectedContent, onNewPostSubmit }) => {
                     value={tag}
                     onChange={handleTagChange}
                     checked={selectedTags.includes(tag)}
+                    tabIndex="0"
                   />
                   <label htmlFor={`tag-${tag}`}>{tag}</label>
                 </div>

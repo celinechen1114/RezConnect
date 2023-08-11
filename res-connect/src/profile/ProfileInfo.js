@@ -3,6 +3,7 @@ import Profile from "./Profile";
 function ProfileInfo({
   name,
   major,
+  role,
   year,
   interests,
   clubs,
@@ -34,7 +35,7 @@ function ProfileInfo({
     >
       <Profile
         name={name}
-        grade={year}
+        grade={role}
         profilePic={profilePic}
         initialLocation={initialLocation}
       />
