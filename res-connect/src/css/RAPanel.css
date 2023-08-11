@@ -111,9 +111,8 @@ body {
     border-top: 1px solid #e0e0e0;
     padding-top: 15px;
     margin-top: 20px;
-    position: absolute;
-    overflow: visible;  /* This ensures that the container doesn't hide overflowing content */
-    box-sizing: border-box;
+    height: 5%;
+
 }
 
 /* .comment-section {
@@ -338,7 +337,7 @@ body {
     border-top: 0px solid #e0e0e0;
     padding-top: 15px;
     margin-top: 20px;
-    position: relative;
+    position: absolute;
     bottom: 3%;        
     width: 80%;         
     left: 10%;          
@@ -346,6 +345,9 @@ body {
     justify-content: center; 
     align-items: center; 
     padding: 20px 0;
+    overflow: visible;
+    box-sizing: border-box;
+
 
 }
 
@@ -395,7 +397,8 @@ body {
     align-items: center;
     max-height: calc(100% - 10%); 
     overflow-x: hidden;
-    overflow-y: auto; 
+    overflow-y: auto;
+    /* overflow-y: auto;  */
 }
 
 .comments-title {

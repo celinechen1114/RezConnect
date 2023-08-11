@@ -12,7 +12,7 @@ body {
     padding: 10px;
     height: calc(100vh - 40px);
     overflow: auto;
-    background-color: #C3E2BE;
+    background-color: #cd9fb8;
     border: 8px solid white; /* Border size and color */
     border-radius: 30px;
     opacity: 1;
@@ -21,13 +21,13 @@ body {
     top: 10px;
     justify-content: center;
     align-items: center;
-    color: #1F6F12;
+    color: #4D1B59;
   }
   
   /* This is the clock time */
   .student-blank-panel-container h1 {
     font-size: 75px; 
-    color:black
+    color:white
   }
   
   .student-blank-panel-container p {
@@ -68,7 +68,7 @@ body {
     /* margin-bottom: 10px; */
   }
 
-.panel-post-item {
+.student-panel-post-item {
     display: block;
     width: 90%;
     margin: 10px auto;
@@ -77,86 +77,53 @@ body {
     border-radius: 10px;
     box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.1);
     font-size: 1em;
-    background-color: #DFE8DE;
+    background-color: #E0E5F2;
     text-align: right; /* Align the timestamp to the right */
 }
 
-.panel-post-item h3 {
+.student-panel-post-item h3 {
     margin-bottom: 8px;
     font-size: 18px;
 }
 
-.panel-post-item p {
+.student-panel-post-item p {
     font-size: 16px;
     line-height: 1.5;
     margin-bottom: 8px;
 
 }
 
-.panel-post-item .timestamp {
+.student-panel-post-item .timestamp {
     font-size: 12px;
     margin-top: 10px;
 }
 
-.identity-section{
+.student-identity-section{
     font-size: 14px;
     color:#1B2559; 
     font-family: sans-serif;
     font-weight: 500;
-    
 }
 
-.comment-section {
+
+.student-comment-section {
     border-top: 1px solid #e0e0e0;
     padding-top: 15px;
     margin-top: 20px;
-    position: absolute;
-    overflow: visible;  /* This ensures that the container doesn't hide overflowing content */
-    box-sizing: border-box;
+    height: 5%;
+
 }
 
-
-/* .comment-section {
-    display: flex;
-    align-items: center;
-  }
-.comment-section p {
-    background-color: #f1f1f1;
-    border-radius: 5px;
-    padding: 10px;
-    margin-bottom: 10px;
-}
-
-.comment-section input {
-    padding: 10px;
-    width: 80%;
-    border-radius: 5px;
-}
-
-.comment-section button {
-    padding: 10px 15px;
-    margin-left: 10px;
-    background-color: #430453;
-    color: white;
-    border: none;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-.comment-section button:hover {
-    background-color: #C3E2BE;
-} */
-
-.comment-form {
+.student-comment-form {
     display: flex;
     align-items: center; /* Vertically center align items */
   }
   
-  .comment-button {
+  .student-comment-button {
     margin-left: 10px; /* Add spacing between input and button */
   }
 
-.tag-selection {
+.student-tag-selection {
     display: flex;
     flex-wrap: wrap;
     gap: 10px;
@@ -166,7 +133,7 @@ body {
     margin: 15px auto;
 }
 
-.tag-selection span {
+.student-tag-selection span {
     margin-right: 10px;
     width: 100%;
     text-align: center;
@@ -174,7 +141,7 @@ body {
     margin-bottom: 10px;
 }
 
-.tag-selection label {
+.student-tag-selection label {
     display: inline-block;
     border-radius: 15px;
     padding: 5px 10px;
@@ -184,26 +151,26 @@ body {
     transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-.tag-selection input[type="checkbox"] {
+.student-tag-selection input[type="checkbox"] {
     display: none;
 }
 
-.tag-selection div:nth-child(1) label { background-color: #ffd6a5; }
-.tag-selection div:nth-child(2) label { background-color: #fdffb6; }
-.tag-selection div:nth-child(3) label { background-color: #caffbf; }
-.tag-selection div:nth-child(4) label { background-color: #9bf6ff; }
-.tag-selection div:nth-child(5) label { background-color: #a0c4ff; }
-.tag-selection div:nth-child(6) label { background-color: #bdb2ff; }
-.tag-selection div:nth-child(7) label { background-color: #ffc6ff; }
+.student-tag-selection div:nth-child(1) label { background-color: #ffd6a5; }
+.student-tag-selection div:nth-child(2) label { background-color: #fdffb6; }
+.student-tag-selection div:nth-child(3) label { background-color: #caffbf; }
+.student-tag-selection div:nth-child(4) label { background-color: #9bf6ff; }
+.student-tag-selection div:nth-child(5) label { background-color: #a0c4ff; }
+.student-tag-selection div:nth-child(6) label { background-color: #bdb2ff; }
+.student-tag-selection div:nth-child(7) label { background-color: #ffc6ff; }
 
-.tag-selection input[type="checkbox"]:checked + label {
+.student-tag-selection input[type="checkbox"]:checked + label {
     color: black;
     font-weight: bold;
     border: 2px solid #1B2559; /* Darker border color */
 }
 
-.submit-btn {
-    background-color: #1F6F12;
+.student-submit-btn {
+    background-color: #4D1B59;
     color: white;
     padding: 10px 20px;
     border-radius: 20px;
@@ -219,21 +186,21 @@ body {
     margin-right: 130px;
 }
 
-.submit-btn:hover {
-    background-color: #619959;
+.student-submit-btn:hover {
+    background-color: #855392;
 }
 
-.submit-btn:active {
+.student-submit-btn:active {
     transform: scale(0.98);
 }
 
-.panel-container form input[placeholder="What's your title?"] {
+.student-panel-container form input[placeholder="What's your title?"] {
     margin-top: 50px;
 }
 
 
-.panel-container input[type="text"],
-.panel-container textarea {
+.student-panel-container input[type="text"],
+.student-panel-container textarea {
     display: block;
     width: 80%;
     margin: 10px auto;
@@ -245,19 +212,19 @@ body {
     background-color: white;
 }
 
-.panel-container textarea {
+.student-panel-container textarea {
     height: 300px;
     resize: vertical;
     margin-bottom: 60px;
 }
 
-.panel-container input[type="text"]::placeholder,
-.panel-container textarea::placeholder {
+.student-panel-container input[type="text"]::placeholder,
+.student-panel-container textarea::placeholder {
     font-weight: bold;
     color: rgba(0, 0, 0, 0.5);
 }
 
-.post-title, .panel-post-body {
+.student-post-title, .student-panel-post-body {
     display: block;
     width: 100%; 
     margin: 10px auto;  
@@ -270,19 +237,19 @@ body {
     color: rgba(0, 0, 0, 0.87); 
 }
 
-.post-title {
+.student-post-title {
     font-weight: bold; 
     text-align: left;
     margin: 10px auto;
 }
 
-.panel-post-body {
+.student-panel-post-body {
     height: 150px; 
     width: 100%; 
     text-align: left;
     overflow-wrap: break-word; 
 }
-.post-actions {
+.student-post-actions {
     display: flex;
     gap: 10px; 
     justify-content: flex-start; 
@@ -290,7 +257,7 @@ body {
     padding: 10px 15px;
 }
 
-.post-actions button {
+.student-post-actions button {
     height: 50px;
     display: flex; 
     gap: 10px;
@@ -303,42 +270,35 @@ body {
     flex-direction: row;   /* Ensure content flows horizontally */
 }
 
-.post-actions button i.material-icons {
+.student-post-actions button i.material-icons {
     margin-right: 5px;  /* Optional: to give some spacing between icon and text */
 }
 
-.post-actions .material-icons {
+.student-post-actions .material-icons {
     font-size: 20px; 
     color: rgb(204, 204, 204);
 }
 
 
-.post-actions button:hover .material-icons  {
+.student-post-actions button:hover .material-icons  {
     color: gold;
  }
 
 
-.post-actions button.liked .material-icons,
-.post-actions button.disliked .material-icons {
+.student-post-actions button.liked .material-icons,
+.student-post-actions button.disliked .material-icons {
     color: gold;
 }
 
-.post-actions button.star-focus .material-icons {
+.student-post-actions button.star-focus .material-icons {
     color: gold;
 }
 
-/* Endorse button styling */
-.endorse-button {
-    background-color: #007BFF; 
-    color: white; 
-}
-
-
-.comment-section {
+.student-comment-section {
     border-top: 0px solid #e0e0e0;
     padding-top: 15px;
     margin-top: 20px;
-    position: relative;
+    position: absolute;
     bottom: 3%;        
     width: 80%;         
     left: 10%;          
@@ -346,21 +306,23 @@ body {
     justify-content: center; 
     align-items: center; 
     padding: 20px 0;
+    overflow: visible;
+    box-sizing: border-box;
 
 }
 
-.comment-section form {
+.student-comment-section form {
     width: 90%; /* Cover 80% of the parent's width */
     display: flex; /* Use flexbox to put children side-by-side */
     justify-content: space-between;
     
 }
 
-.comment-section input, .comment-section button {
+.student-comment-section input, .student-comment-section button {
     height: 40px; /* You can adjust this value to your liking */
 }
 
-.comment-section input {
+.student-comment-section input {
     flex: 7.5; /* The input should take 75% of the width, accounting for flexbox */
     padding: 10px;
     margin-right: 10px; /* A little spacing between the input and the button */
@@ -368,10 +330,10 @@ body {
     border: 1px solid rgb(126, 89, 89);
 }
 
-.comment-section button {
+.student-comment-section button {
     flex: 0.5; /* The button should take the remaining 5% */
     padding: 0 5px; /* Reduce padding to fit button in 5% width */
-    background-color: #1F6F12;
+    background-color: #4D1B59;
     color: white;
     border: none;
     cursor: pointer;
@@ -384,21 +346,22 @@ body {
     font-weight: bold;
 }
 
-.comment-section button:hover {
-    background-color: #619959;
+.student-comment-section button:hover {
+    background-color: #855392;
 }
 
-.comments-list {
+.student-comments-list {
     flex: 1;
+    overflow-y: auto;
     display: flex;
     flex-direction: column;
     align-items: center;
     max-height: calc(100% - 10%); 
-    overflow-x: hidden;
-    overflow-y: auto; 
+    overflow-x: hidden
+    /* overflow-y: auto;  */
 }
 
-.comments-title {
+.student-comments-title {
     display: block;
     font-weight: bold;
     width: 100%; 
@@ -409,7 +372,7 @@ body {
 }
 
 
-.comment-item {
+.student-comment-item {
     margin-left: auto;
     margin-right: auto;
     width: 90%;
@@ -421,7 +384,7 @@ body {
     flex-direction: column;
 }
 
-.comment-text-box {
+.student-comment-text-box {
     margin-top: 20px;
     padding: 10px;
     background-color: #fff;
@@ -434,7 +397,7 @@ body {
     overflow-y: auto;  
 }
 
-.comment-actions {
+.student-comment-actions {
     height: 50px;
     display: flex; 
     gap: 10px;
@@ -443,7 +406,7 @@ body {
 }
 
 
-.comment-actions button {
+.student-comment-actions button {
     height: 50px;
     display: flex; 
     gap: 10px;
@@ -456,41 +419,41 @@ body {
     flex-direction: row;   /* Ensure content flows horizontally */
 }
 
-.comment-actions button:hover .material-icons  {
+.student-comment-actions button:hover .material-icons  {
     color: gold
  }
 
 
- .comment-actions button.liked .material-icons,
-.comment-actions button.disliked .material-icons {
+ .student-comment-actions button.liked .material-icons,
+.student-comment-actions button.disliked .material-icons {
     color: gold;
 }
 
-.comment-actions button.star-focus .material-icons {
+.student-comment-actions button.star-focus .material-icons {
     color: gold;
 }
 
-.comment-actions button i.material-icons {
+.student-comment-actions button i.material-icons {
     margin-right: 5px;  /* Optional: to give some spacing between icon and text */
 }
 
-.comment-actions .material-icons {
+.student-comment-actions .material-icons {
     font-size: 20px; 
     color: rgb(204, 204, 204);
 }
 
 
-.comment-actions button:active {
+.student-comment-actions button:active {
     transform: scale(0.95);
     box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.15), 0 3px 10px 0 rgba(0, 0, 0, 0.12);
 }
 
-.comment-endorse-button {
+.student-comment-endorse-button {
     background-color: #007BFF; 
     color: white; 
 }
 
-.comment-user-info {
+.student-comment-user-info {
     display: flex;
     justify-content: space-between;  
     font-size: 0.8em;
@@ -509,7 +472,7 @@ body {
 
 }
 
-.comment-timestamp {
+.student-comment-timestamp {
     text-align: right;
     font-size: 12px;
     /* margin-top: 10px; */
@@ -518,20 +481,20 @@ body {
 }
 
 
-.comment-actions .material-icons {
+.student-comment-actions .material-icons {
     font-size: 20px; 
     color: rgb(204, 204, 204);
 }
 
 
-.comment-input-container {
+.student-comment-input-container {
     display: flex;
     justify-content: space-between; 
     align-items: center; 
     width: 100%;
 }
 
-.comment-input {
+.student-comment-input {
     flex: 1; 
     margin-right: 10px; 
     padding: 5px 10px;
@@ -539,7 +502,7 @@ body {
     border-radius: 4px;
 }
 
-.comment-submit-btn {
+.student-comment-submit-btn {
     padding: 5px 15px;
     background-color: #007BFF;
     color: white;
@@ -549,8 +512,7 @@ body {
 }
 
 
-.scrollable-panel-content {
-    flex: 1;
+.student-scrollable-panel-content {
     max-height: 100vh;  /* This ensures the container will not exceed the viewport height */
     overflow-y: auto;  /* This enables vertical scrolling when content exceeds the container height */
     padding: 1rem;    /* Add some padding if you wish */
