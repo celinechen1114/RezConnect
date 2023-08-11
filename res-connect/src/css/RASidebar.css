@@ -70,13 +70,14 @@
 
   .profile-button {
     display: flex;
-    width: calc(100% - 20px);
+    width: calc(90%);
     justify-content: space-between;
-    border-radius: 30px;
+    border-radius: 10px;
     overflow: hidden;
     position: absolute;
     bottom: 3%; 
     left: 50%;  
+    background-color: transparent;
     transform: translateX(-50%); 
 
   }

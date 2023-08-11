@@ -42,9 +42,9 @@ function Profile({
         padding: 10,
         background: "white",
         boxShadow: "14px 17px 40px 4px rgba(112, 144, 176, 0.08)",
-        borderRadius: 20,
+        borderRadius: 10,
         // overflow: "hidden",
-        border: "0.50px #E0E5F2 solid",
+        border: "2px #E0E5F2 solid",
         display: "flex",
         justifyContent: "flex-start",
         alignItems: "center",
@@ -65,7 +65,7 @@ function Profile({
         <div style={{ color: "#1B2559", textAlign: "left" }}>{name}</div>
         <div
           style={{
-            color: "rgba(27, 37, 89, 0.60)",
+            color: "rgba(37, 41, 88, 1)",
             textAlign: "left",
           }}
         >
