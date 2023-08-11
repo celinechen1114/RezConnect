@@ -18,15 +18,33 @@ const RASidebar = ({ onPostSelect, setSelectedContent, posts }) => {
     "emergency",
   ];
 
+  const dummyProfileInfo = {
+    name: "James",
+    grade: "Freshman",
+    profilePic: "./james.png",  // You can replace this with the actual path
+  };
+
+  const dummyPost = {
+    title: "Tennis at 6?",
+    tags: ["all", "sports", "social"],
+    body: "Does anyone want to play Tennis at Hearst Courts at 6pm?",
+    isDummy: true,
+    timestamp: new Date().toISOString(),
+    // You can add more properties as per your post structure
+  };
+
+  const postsWithDummy = [dummyPost, ...posts];
+
+  
+
   const handlePostClick = (post) => {
     onPostSelect(post);
     setActiveTag("all"); // reset the filter after post selection
   };
 
-  const filteredPosts =
-    activeTag === "all"
-      ? posts
-      : posts.filter((post) => post.tags && post.tags.includes(activeTag));
+  const filteredPosts = activeTag === "all"
+  ? postsWithDummy
+  : postsWithDummy.filter((post) => post.tags && post.tags.includes(activeTag));
 
   return (
     <div className="sidebar">
