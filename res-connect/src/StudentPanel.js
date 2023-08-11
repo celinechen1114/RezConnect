@@ -269,9 +269,9 @@ const handleCommentEndorse = (cIndex) => {
   } else {
     if (post === null) {
       return (
-        <div className="panel-container">
+        <div className="student-panel-container">
           {/* <span style={{ display: 'block', width: '80%', textAlign: 'left', marginLeft: '10%', fontWeight:'bold' }}>New Post</span> */}
-          <div className="new-post-title">New Post</div>
+          <div className="student-new-post-title">New Post</div>
           <form onSubmit={handleSubmit}>
             <input
               type="text"
@@ -299,7 +299,7 @@ const handleCommentEndorse = (cIndex) => {
             >
               Select Tags
             </span>
-            <div className="tag-selection">
+            <div className="student-tag-selection">
               {tags.map((tag) => (
                 <div key={tag}>
                   <input
@@ -315,7 +315,7 @@ const handleCommentEndorse = (cIndex) => {
               ))}
             </div>
 
-            <button type="submit" className="submit-btn">
+            <button type="submit" className="student-submit-btn">
               Submit
             </button>
           </form>
@@ -330,7 +330,7 @@ const handleCommentEndorse = (cIndex) => {
           <h1>{timeString}</h1>
           <p>
             {" "}
-            Welcome back to <span className="title"> RezConnect </span> James
+            Welcome back to <span className="title" style={{'color': 'white'}}> RezConnect </span> James
             :){" "}
           </p>
         </div>
@@ -339,9 +339,9 @@ const handleCommentEndorse = (cIndex) => {
 
     return (
       <div className="student-panel-container">
-        <div className="scrollable-panel-content">
-          <div className="panel-post-item">
-            <div className="identity-section">
+        <div className="student-scrollable-panel-content">
+          <div className="student-panel-post-item">
+            <div className="student-identity-section">
               {/* <span>Username</span>  Replace with actual username */}
               {/* Celine's comment: the TIMESTAMP is now moved to the top of the div! */}
               <span>{new Date(post.timestamp).toLocaleString()}</span>
@@ -355,13 +355,13 @@ const handleCommentEndorse = (cIndex) => {
             {/* Identity Section */}
 
             {/* Post Title */}
-            <h2 className="post-title">{post.title}</h2>
+            <h2 className="student-post-title">{post.title}</h2>
 
             {/* Post Body */}
-            <p className="panel-post-body">{post.body}</p>
+            <p className="student-panel-post-body">{post.body}</p>
 
             {/* Post Action Buttons */}
-            <div className="post-actions">
+            <div className="student-post-actions">
               <button
                 onClick={handlePostThumbsUp}
                 className={postLiked ? "liked" : ""}
@@ -382,21 +382,21 @@ const handleCommentEndorse = (cIndex) => {
 
           {/* Comments List */}
 
-          <div className="comments-list">
-            <div className="comments-title">Comments</div>
+          <div className="student-comments-list">
+            <div className="student-comments-title">Comments</div>
               {post.comments &&
                 post.comments.map((commentObj, cIndex) => (
-                  <div key={cIndex} className="comment-item">
-                    <span className="comment-timestamp">{new Date(commentObj.timestamp).toLocaleString()}</span>
+                  <div key={cIndex} className="student-comment-item">
+                    <span className="student-comment-timestamp">{new Date(commentObj.timestamp).toLocaleString()}</span>
                     <Profile
                       name="James"
                       grade="Freshman"
                       profilePic={profilePic}
                     ></Profile>
-                    <div className="comment-text-box">
-                      <p className="comment-text">{commentObj.text}</p>
+                    <div className="student-comment-text-box">
+                      <p className="student-comment-text">{commentObj.text}</p>
                     </div>
-                    <div className="comment-actions">
+                    <div className="student-comment-actions">
                     <button
                         onClick={() => handleCommentThumbsUp(cIndex)}
                         className={commentStatus[cIndex]?.liked ? "liked" : ""}
@@ -423,8 +423,8 @@ const handleCommentEndorse = (cIndex) => {
       
 
         {/* Comment Submission */}
-        <div className="comment-section">
-          <form onSubmit={handleCommentSubmit} className="comment-form">
+        <div className="student-comment-section">
+          <form onSubmit={handleCommentSubmit} className="student-comment-form">
             <input
               type="text"
               value={comment}
@@ -432,7 +432,7 @@ const handleCommentEndorse = (cIndex) => {
               placeholder="Add a comment..."
               required
             />
-            <button className="comment-button" type="submit">
+            <button className="student-comment-button" type="submit">
               Add
             </button>
           </form>

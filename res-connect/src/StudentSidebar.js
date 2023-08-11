@@ -29,15 +29,15 @@ const StudentSidebar = ({ onPostSelect, setSelectedContent, posts }) => {
       : posts.filter((post) => post.tags && post.tags.includes(activeTag));
 
   return (
-    <div className="sidebar">
+    <div className="student-sidebar">
       <div className="title">RezConnect</div>
-      <div className="new-post-button">
+      <div className="student-new-post-button">
         <button onClick={() => onPostSelect(null)}>New Post</button>
       </div>
 
-      <div className="tag-filter">
+      <div className="student-tag-filter">
         <h3>Filter by tags</h3>
-        <ul className="tags-list">
+        <ul className="student-tags-list">
           {tags.map((tag) => (
             <li
               key={tag}
@@ -56,7 +56,7 @@ const StudentSidebar = ({ onPostSelect, setSelectedContent, posts }) => {
       <ul className="posts">
         {filteredPosts.map((post, index) => (
           <li
-            className="post-item"
+            className="student-post-item"
             key={index}
             onClick={() => handlePostClick(post)}
           >
@@ -67,7 +67,7 @@ const StudentSidebar = ({ onPostSelect, setSelectedContent, posts }) => {
       </ul>
 
       <div
-        className="profile-button"
+        className="student-profile-button"
         onClick={() => setSelectedContent("profile")}
       >
         <Profile
