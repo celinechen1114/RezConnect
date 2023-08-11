@@ -43,7 +43,6 @@ function Profile({
         background: "white",
         boxShadow: "14px 17px 40px 4px rgba(112, 144, 176, 0.08)",
         borderRadius: 10,
-        // overflow: "hidden",
         border: "2px #E0E5F2 solid",
         display: "flex",
         justifyContent: "flex-start",
