@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import "./css/RAPanel.css";
 import Profile from "./profile/Profile";
 import profilePic from "./emilie.png";
+import dummyPic from "./james.png";
 import ProfileSetting from "./profile/ProfileSetting";
 
 const RAPanel = ({ post, selectedContent, onNewPostSubmit }) => {
@@ -18,6 +19,13 @@ const RAPanel = ({ post, selectedContent, onNewPostSubmit }) => {
     "social",
     "sports",
   ];
+
+  const dummyProfileInfo = {
+    name: "James",
+    grade: "Freshman",
+    profilePic: dummyPic,  // You can replace this with the actual path
+  };
+  
   
 
   const handleChangeTitle = (event) => {
@@ -347,11 +355,20 @@ const handleCommentEndorse = (cIndex) => {
               <span>{new Date(post.timestamp).toLocaleString()}</span>
             </div>
 
-            <Profile
-              name="Emilie"
-              grade="Resident Advisor"
-              profilePic={profilePic}
-            ></Profile>
+            {post.isDummy ? (
+              <Profile
+                name={dummyProfileInfo.name}
+                grade={dummyProfileInfo.grade}
+                profilePic={dummyProfileInfo.profilePic}
+              />
+            ) : (
+              <Profile
+                name="Emilie"
+                grade="Resident Advisor"
+                profilePic={profilePic}
+              />
+            )}
+
             {/* Identity Section */}
 
             {/* Post Title */}
