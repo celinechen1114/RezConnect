@@ -11,13 +11,13 @@ const RAPanel = ({ post, selectedContent, onNewPostSubmit }) => {
   const [comment, setComment] = useState("");
   const [selectedTags, setSelectedTags] = useState([]);
   const tags = [
+    "sports",
+    "social",
     "academics",
     "dorms",
-    "emergency",
     "emotional support",
     "health",
-    "social",
-    "sports",
+    "emergency",
   ];
 
   const dummyProfileInfo = {
