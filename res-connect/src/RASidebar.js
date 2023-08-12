@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./css/RASidebar.css";
 import Profile from "./profile/Profile";
-import profilePic from "./emilie.png";
+import profilePic from "./emilie.svg";
 import postIcon from "./chat.png";
 
 const RASidebar = ({ onPostSelect, setSelectedContent, posts }) => {
@@ -21,7 +21,7 @@ const RASidebar = ({ onPostSelect, setSelectedContent, posts }) => {
   const dummyProfileInfo = {
     name: "James",
     grade: "Freshman",
-    profilePic: "./james.png",  // You can replace this with the actual path
+    profilePic: "./james.png", // You can replace this with the actual path
   };
 
   const dummyPost = {
@@ -35,16 +35,17 @@ const RASidebar = ({ onPostSelect, setSelectedContent, posts }) => {
 
   const postsWithDummy = [dummyPost, ...posts];
 
-  
-
   const handlePostClick = (post) => {
     onPostSelect(post);
     setActiveTag("all"); // reset the filter after post selection
   };
 
-  const filteredPosts = activeTag === "all"
-  ? postsWithDummy
-  : postsWithDummy.filter((post) => post.tags && post.tags.includes(activeTag));
+  const filteredPosts =
+    activeTag === "all"
+      ? postsWithDummy
+      : postsWithDummy.filter(
+          (post) => post.tags && post.tags.includes(activeTag)
+        );
 
   return (
     <div className="sidebar">
@@ -89,7 +90,7 @@ const RASidebar = ({ onPostSelect, setSelectedContent, posts }) => {
         onClick={() => setSelectedContent("profile")}
       >
         <Profile
-          name="Emilie"
+          name="John"
           grade="Resident Advisor"
           profilePic={profilePic}
           location=""

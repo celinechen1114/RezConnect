@@ -328,7 +328,7 @@ const StudentPanel = ({ post, selectedContent, onNewPostSubmit }) => {
           <p>
             {" "}
             Welcome back to{" "}
-            <span className="title" style={{ color: "white" }}>
+            <span className="title" style={{ color: "black" }}>
               {" "}
               RezConnect{" "}
             </span>{" "}
